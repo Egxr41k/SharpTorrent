@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\App.xaml
-11407045341
+11121423476
 
-51887167798
+8852374004
 1941142463650
-MainWindow.xaml;
+MVVM\View\MainWindow.xaml;
 
 False
 

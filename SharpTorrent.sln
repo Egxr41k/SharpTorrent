@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTorrent", "SharpTorrent\SharpTorrent.csproj", "{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTorrent", "ConsoleTorrent\ConsoleTorrent.csproj", "{1E96B41C-F356-463A-8EFD-7061A6ED1323}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E96B41C-F356-463A-8EFD-7061A6ED1323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E96B41C-F356-463A-8EFD-7061A6ED1323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E96B41C-F356-463A-8EFD-7061A6ED1323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E96B41C-F356-463A-8EFD-7061A6ED1323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
