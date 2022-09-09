@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTorrent", "SharpTorrent\SharpTorrent.csproj", "{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29885B2-FD9E-40B6-9CE5-28542F9D4F66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {376AF3F8-00B3-40C6-8695-87FC9A5CFAC6}
+	EndGlobalSection
+EndGlobal
