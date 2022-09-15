@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\App.xaml
-11121423476
+81466584763
 
-8852374004
-1941142463650
-MVVM\View\MainWindow.xaml;
+111660737962
+206321207
+MVVM\View\MainWindow.xaml;MVVM\View\Themes\DarkUI\DarkBg.xaml;MVVM\View\Themes\DarkUI\DarkBtn.xaml;MVVM\View\Themes\DarkUI\DarkMenu.xaml;MVVM\View\Themes\DarkUI\DarkScrollBar.xaml;MVVM\View\Themes\DarkUI\DarkText.xaml;MVVM\View\Themes\DarkUI\DarkTitle.xaml;MVVM\View\Themes\General\IconsTheme.xaml;
 
-False
+True
 

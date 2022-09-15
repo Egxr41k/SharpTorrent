@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarkNotes.MVVM.ViewModel.Base
+namespace SharpTorrent.MVVM.ViewModel.Base
 {
     internal abstract class ViewModel : INotifyPropertyChanged, IDisposable
     {

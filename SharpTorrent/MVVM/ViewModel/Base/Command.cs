@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace DarkNotes.MVVM.ViewModel.Base
+namespace SharpTorrent.MVVM.ViewModel.Base
 {
     public class Command : ICommand
     {

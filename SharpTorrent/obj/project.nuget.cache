@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xGCOkEvV8moS2UinIeIO0l+aYD4WGvQDMSW6k9rVzH9ctdCqrVcDXaMwLYkafMZxuOMiCDrtx5KM3XATgNdwUg==",
+  "dgSpecHash": "EeNF3naLuu9jwfNNNp2TC78oDwmgoaoqqVxnKJd3Bh1zCdOzz6jvbxOLuoZGCe759G0+jNl3VXI4ndrM0CzPYQ==",
   "success": true,
   "projectFilePath": "C:\\code\\.NET code\\C#Dev\\SharpTorrent\\SharpTorrent\\SharpTorrent.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Егор Кравченко\\.nuget\\packages\\mono.nat\\3.0.0\\mono.nat.3.0.0.nupkg.sha512",
+    "C:\\Users\\Егор Кравченко\\.nuget\\packages\\monotorrent\\3.0.0-beta.rev0010\\monotorrent.3.0.0-beta.rev0010.nupkg.sha512",
+    "C:\\Users\\Егор Кравченко\\.nuget\\packages\\reusabletasks\\2.0.2\\reusabletasks.2.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

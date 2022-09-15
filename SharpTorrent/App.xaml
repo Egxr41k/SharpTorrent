@@ -2,8 +2,22 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SharpTorrent"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MVVM/View/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+
+                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkBtn.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkBg.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkMenu.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkScrollBar.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkText.xaml"/>
+
+                <ResourceDictionary Source="MVVM/View/Themes/General/IconsTheme.xaml"/>
+
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

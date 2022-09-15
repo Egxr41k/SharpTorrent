@@ -4,9 +4,57 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SharpTorrent"
+        xmlns:vm="clr-namespace:SharpTorrent.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="540"
+        Width="960"
+        Background="Black"
+        WindowStyle="None">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="#101010">
+            <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Text="SharpTorrent"
+                           FontSize="20"
+                           Style="{DynamicResource DarkText}"/>
+                    <TextBlock Text="Egxr41k software"
+                           FontSize="12" Opacity="0.6"
+                           Style="{DynamicResource DarkText}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="{Binding Active}" Style="{DynamicResource DarkText}"/>
+                <ListBox>
+                    
+                </ListBox>
+            </StackPanel>
+            
+            <StackPanel>
+                <TextBlock Text="{Binding Stoped}" Style="{DynamicResource DarkText}"/>
+                <ListBox>
+
+                </ListBox>
+            </StackPanel>
+        </StackPanel>
+        
+        <!--<StackPanel>
+            <ProgressBar Minimum="0" Maximum="100" Value="75" Height="1"/>
+        </StackPanel>-->
+
+
+        <StackPanel>
+            <!--<Button Content="Open torrent" Command="{Binding OpenFileCommand}"/>-->
+        </StackPanel>
 
     </Grid>
 </Window>

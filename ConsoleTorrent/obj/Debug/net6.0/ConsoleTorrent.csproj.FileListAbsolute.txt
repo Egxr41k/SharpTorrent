@@ -1,0 +1,15 @@
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.exe
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.deps.json
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.runtimeconfig.json
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ref\ConsoleTorrent.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.pdb
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.csproj.AssemblyReference.cache
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.AssemblyInfoInputs.cache
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.AssemblyInfo.cs
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.csproj.CoreCompileInputs.cache
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ref\ConsoleTorrent.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.pdb
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.genruntimeconfig.cache
