@@ -17,7 +17,8 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="709*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Background="#101010">
             <StackPanel VerticalAlignment="Center"
@@ -25,36 +26,31 @@
                 <StackPanel>
                     <TextBlock Text="SharpTorrent"
                            FontSize="20"
+                           HorizontalAlignment="Center"
                            Style="{DynamicResource DarkText}"/>
                     <TextBlock Text="Egxr41k software"
                            FontSize="12" Opacity="0.6"
+                           HorizontalAlignment="Center"
                            Style="{DynamicResource DarkText}"/>
                 </StackPanel>
             </StackPanel>
-
             <StackPanel>
-                <TextBlock Text="{Binding Active}" Style="{DynamicResource DarkText}"/>
-                <ListBox>
-                    
-                </ListBox>
+                <StackPanel Margin="0,20">
+                    <TextBlock Text="{Binding Active}"
+                               Style="{DynamicResource DarkText}"
+                               Margin="10,0,0,0"/>
+                    <ListBox Style="{DynamicResource DarkListbox}"
+                             ItemsSource="#"/>
+                </StackPanel>
+                <StackPanel Margin="0,20">
+                    <TextBlock Text="{Binding Stoped}"
+                               Style="{DynamicResource DarkText}"
+                               Margin="10,0,0,0"/>
+                    <ListBox Style="{DynamicResource DarkListbox}"
+                             ItemsSource="#"/>
+                </StackPanel>
             </StackPanel>
-            
-            <StackPanel>
-                <TextBlock Text="{Binding Stoped}" Style="{DynamicResource DarkText}"/>
-                <ListBox>
 
-                </ListBox>
-            </StackPanel>
         </StackPanel>
-        
-        <!--<StackPanel>
-            <ProgressBar Minimum="0" Maximum="100" Value="75" Height="1"/>
-        </StackPanel>-->
-
-
-        <StackPanel>
-            <!--<Button Content="Open torrent" Command="{Binding OpenFileCommand}"/>-->
-        </StackPanel>
-
     </Grid>
 </Window>

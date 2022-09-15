@@ -42,3 +42,4 @@ C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\
 C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\View\Themes\DarkUI\DarkTitle.baml
 C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\View\Themes\General\IconsTheme.baml
 C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\App.baml
+C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\View\Themes\DarkUI\DarkTorrentsList.baml

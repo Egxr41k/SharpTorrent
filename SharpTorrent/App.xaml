@@ -8,13 +8,16 @@
             <ResourceDictionary.MergedDictionaries>
 
 
-                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkBtn.xaml"/>
-                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkBg.xaml"/>
-                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkMenu.xaml"/>
-                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkScrollBar.xaml"/>
-                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkText.xaml"/>
+             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkBtn.xaml"/>
+             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkBg.xaml"/>
+             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkMenu.xaml"/>
+             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkScrollBar.xaml"/>
+             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkText.xaml"/>
+             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkText.xaml"/>
+                
 
-                <ResourceDictionary Source="MVVM/View/Themes/General/IconsTheme.xaml"/>
+            <ResourceDictionary Source="MVVM/View/Themes/General/IconsTheme.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkTorrentsList.xaml"/>
 
 
             </ResourceDictionary.MergedDictionaries>
