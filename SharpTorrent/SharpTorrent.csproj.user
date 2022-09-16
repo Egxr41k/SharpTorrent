@@ -7,6 +7,17 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MVVM\View\HomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\TorrentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MVVM\View\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MVVM\View\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -29,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\Themes\General\IconsTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\TorrentView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

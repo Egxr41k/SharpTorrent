@@ -43,6 +43,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MonoTorrent": {
+              "target": "Package",
+              "version": "[3.0.0-beta.rev0010, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

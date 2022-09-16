@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SharpTorrent.MVVM.ViewModel
 {
-    internal class TorrentViewModel
+    internal class TorrentViewModel : Base.ViewModel
     {
+        public bool IsActive { get; set; }
+
+        public string TorrentName { get; set; }
+        public string TorrentPath { get; set; }
+
+        public int ProgressBarValue { get; set; }
+
     }
 }
