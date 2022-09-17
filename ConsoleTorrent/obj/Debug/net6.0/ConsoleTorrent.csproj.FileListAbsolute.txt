@@ -13,3 +13,17 @@ C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorr
 C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ref\ConsoleTorrent.dll
 C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.pdb
 C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.genruntimeconfig.cache
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\Mono.Nat.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.BEncoding.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Client.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Connections.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Dht.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Factories.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Messages.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.PiecePicking.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.PieceWriter.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.PortForwarding.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Trackers.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ReusableTasks.dll
+C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.csproj.CopyComplete
