@@ -1,4 +1,6 @@
 ﻿using Microsoft.Win32;
+using MonoTorrent;
+using MonoTorrent.Client;
 using SharpTorrent.MVVM.Model;
 using System;
 using System.Collections.ObjectModel;
@@ -28,25 +30,26 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref stoped, value);
         }
 
-        //public ObservableCollection<ListBoxItem> torrentListItems = new();
+        public ObservableCollection<ListBoxItem> torrentListItems = new();
 
-        //public void TorrentsPreviwInit()
-        //{
-        //    foreach( torrent in MainModel.Engine.Torrents)
-        //    {
-        //        var TorrentVM = new TorrentViewModel
-        //        {
-        //            IsActive = true,
-        //            //TorrentName = torrent...
-        //            //TorrentPath = torrent...
-        //        };
-        //        torrentListItems.Add(new ListBoxItem
-        //        {
-        //            DataContext = TorrentVM
-        //        });
+        public void TorrentsPreviwInit()
+        {
+            foreach (TorrentManager manager in MainModel.Engine.Torrents)
+            {
+                var TorrentVM = new TorrentViewModel
+                {
+                    IsActive = true,
+                    //TorrentName = torrent...
+                    //TorrentPath = torrent...
+                };
 
-        //    }
-        //}
+                torrentListItems.Add(new ListBoxItem
+                {
+                    DataContext = TorrentVM
+                });
+
+            }
+        }
 
         public MainViewModel()
         {

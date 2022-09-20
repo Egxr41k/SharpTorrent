@@ -13,7 +13,12 @@ namespace SharpTorrent.MVVM.ViewModel
         public string TorrentName { get; set; }
         public string TorrentPath { get; set; }
 
-        public int ProgressBarValue { get; set; }
+        public int ProgressBarValue
+        {
+            get => progrssBarValue;
+            set => Set(ref progrssBarValue, value);
+        }
+        public int progrssBarValue;
 
     }
 }
