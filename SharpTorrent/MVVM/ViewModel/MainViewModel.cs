@@ -13,7 +13,9 @@ namespace SharpTorrent.MVVM.ViewModel
 {
     internal class MainViewModel : Base.ViewModel
     {
+        public HomeViewModel HomeVM { get; set; }
         public Base.Command OpenFileCommand { get; set; }
+        public Base.Command AddNewTorrent { get; set; }
 
 
         private string active = "No Active torrents yet";
@@ -30,35 +32,57 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref stoped, value);
         }
 
-        public ObservableCollection<ListBoxItem> torrentListItems = new();
+        private ObservableCollection<ListBoxItem> activeTorrents = new();
+        public ObservableCollection<ListBoxItem> ActiveTorrents
+        {
+            get => activeTorrents;
+            set => Set(ref activeTorrents, value);
+        }
+
+
+        private ObservableCollection<ListBoxItem> stopedTorrents = new();
+        public ObservableCollection<ListBoxItem> StopedTorrents
+        {
+            get => stopedTorrents;
+            set => Set(ref stopedTorrents, value);
+        }
+
+        private object currentView;
+        public object CurrentView
+        {
+            get => currentView;
+            set => Set(ref currentView, value);
+        }
 
         public void TorrentsPreviwInit()
         {
             foreach (TorrentManager manager in MainModel.Engine.Torrents)
             {
-                var TorrentVM = new TorrentViewModel
-                {
-                    IsActive = true,
-                    //TorrentName = torrent...
-                    //TorrentPath = torrent...
-                };
-
-                torrentListItems.Add(new ListBoxItem
-                {
-                    DataContext = TorrentVM
-                });
-
+                ActiveTorrents.Add(
+                    new ListBoxItem
+                    {
+                        DataContext = new TorrentViewModel
+                        {
+                            IsActive = true,
+                            TorrentName = manager.Name,
+                            TorrentPath = manager.SavePath,
+                            ProgressBarValue = (int)manager.Progress
+                        }
+                    }
+                );
             }
         }
 
         public MainViewModel()
         {
+            HomeVM = new();
+            currentView = HomeVM;
 
             OpenFileCommand = new Base.Command(/*async*/ o =>
             {
-                OpenFileDialog ofd = new OpenFileDialog
+                OpenFileDialog ofd = new()
                 {
-                    Filter = "Text Files(*.txt)|*.txt"
+                    Filter = "Torrent Files(*.torrent)|*.torrent"
                 };
 
                 if (ofd.ShowDialog() == true)
@@ -67,6 +91,10 @@ namespace SharpTorrent.MVVM.ViewModel
                 }
             });
 
+            AddNewTorrent = new Base.Command(o =>
+            {
+
+            });
         }
     }
 }

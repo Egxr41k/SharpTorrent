@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\App.xaml
-9-1537963083
+1152719212
 
-9-1459599393
+12-1170753633
 206321207
-MVVM\View\MainWindow.xaml;MVVM\View\Themes\DarkUI\DarkBg.xaml;MVVM\View\Themes\DarkUI\DarkBtn.xaml;MVVM\View\Themes\DarkUI\DarkMenu.xaml;MVVM\View\Themes\DarkUI\DarkScrollBar.xaml;MVVM\View\Themes\DarkUI\DarkText.xaml;MVVM\View\Themes\DarkUI\DarkTitle.xaml;MVVM\View\Themes\DarkUI\DarkTorrentsList.xaml;MVVM\View\Themes\General\IconsTheme.xaml;
+MVVM\View\HomeView.xaml;MVVM\View\MainWindow.xaml;MVVM\View\Themes\DarkUI\DarkBg.xaml;MVVM\View\Themes\DarkUI\DarkBtn.xaml;MVVM\View\Themes\DarkUI\DarkMenu.xaml;MVVM\View\Themes\DarkUI\DarkScrollBar.xaml;MVVM\View\Themes\DarkUI\DarkText.xaml;MVVM\View\Themes\DarkUI\DarkTitle.xaml;MVVM\View\Themes\DarkUI\DarkTorrentsList.xaml;MVVM\View\Themes\General\IconsTheme.xaml;MVVM\View\TorrentView.xaml;
 
 False
 

@@ -1,9 +1,9 @@
-﻿<Window x:Class="SharpTorrent.MainWindow"
+﻿<Window x:Class="SharpTorrent.MVVM.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SharpTorrent"
+        xmlns:local="clr-namespace:SharpTorrent.MVVM.View"
         xmlns:vm="clr-namespace:SharpTorrent.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow"
@@ -17,8 +17,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="51*"/>
-            <ColumnDefinition Width="709*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Background="#101010">
             <StackPanel VerticalAlignment="Center"
@@ -40,17 +39,21 @@
                                Style="{DynamicResource DarkText}"
                                Margin="10,0,0,0"/>
                     <ListBox Style="{DynamicResource DarkListbox}"
-                             ItemsSource="#"/>
+                             ItemsSource="{Binding ActiveTorrents}"/>
                 </StackPanel>
                 <StackPanel Margin="0,20">
                     <TextBlock Text="{Binding Stoped}"
                                Style="{DynamicResource DarkText}"
                                Margin="10,0,0,0"/>
                     <ListBox Style="{DynamicResource DarkListbox}"
-                             ItemsSource="#"/>
+                             ItemsSource="{Binding StopedTorrents}"/>
+
                 </StackPanel>
             </StackPanel>
-
         </StackPanel>
+        
+        <ContentControl Grid.Column="1"
+                        Content="{Binding CurrentView}"/>
+        
     </Grid>
 </Window>
