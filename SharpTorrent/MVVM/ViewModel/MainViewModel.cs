@@ -7,7 +7,9 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace SharpTorrent.MVVM.ViewModel
 {
@@ -16,6 +18,44 @@ namespace SharpTorrent.MVVM.ViewModel
         public HomeViewModel HomeVM { get; set; }
         public Base.Command OpenFileCommand { get; set; }
         public Base.Command AddNewTorrent { get; set; }
+        public Base.Command? MaximizeCommand { get; set; }
+        public Base.Command? MinimizeCommand { get; set; }
+        public Base.Command? CloseCommand { get; set; }
+
+        #region Icons
+        public BitmapImage MinimizeIcon { get => minimizeIcon; }
+        private BitmapImage minimizeIcon;
+
+        public BitmapImage MaximizeIcon { get => maximizeIcon; }
+        private BitmapImage maximizeIcon;
+
+        public BitmapImage CloseIcon { get => closeIcon; }
+        private BitmapImage closeIcon;
+
+        #endregion
+        private static Window MainWindow
+        {
+            get => Application.Current.MainWindow;
+        }
+
+        
+
+        private void AppCommandsInit()
+        {
+            MinimizeCommand = new(o =>
+            {
+                MainWindow.WindowState = WindowState.Minimized;
+            });
+
+            MaximizeCommand = new(o =>
+            {
+                if (MainWindow.WindowState == WindowState.Normal)
+                    MainWindow.WindowState = WindowState.Maximized;
+                else MainWindow.WindowState = WindowState.Normal;
+            });
+
+            CloseCommand = new(o => MainWindow.Close());
+        }
 
 
         private string active = "No Active torrents yet";
@@ -54,7 +94,7 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref currentView, value);
         }
 
-        public void TorrentsPreviwInit()
+        private void TorrentsPreviwInit()
         {
             foreach (TorrentManager manager in MainModel.Engine.Torrents)
             {
@@ -70,6 +110,21 @@ namespace SharpTorrent.MVVM.ViewModel
                         }
                     }
                 );
+            }
+        }
+        private void IconsInit()
+        {
+            string iconsDirectory = MainModel.RESOURCEPATH + "\\Icons";
+            string[] iconsFiles = Directory.GetFiles(iconsDirectory);
+            BitmapImage[] icons =
+            {
+                CloseIcon,
+                MaximizeIcon,
+                MinimizeIcon,
+            };
+            for (int i = 0; i < icons.Length; i++)
+            {
+                icons[i] = new BitmapImage(new Uri(iconsFiles[i]));
             }
         }
 
@@ -95,6 +150,8 @@ namespace SharpTorrent.MVVM.ViewModel
             {
 
             });
+
+            IconsInit();
         }
     }
 }

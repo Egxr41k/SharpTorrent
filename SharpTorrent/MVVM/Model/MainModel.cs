@@ -4,11 +4,19 @@ using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace SharpTorrent.MVVM.Model
 {
     static class MainModel
     {
+        public static string RESOURCEPATH =
+            Path.GetFullPath(
+                Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    @"..\..\..\Resources"));
+
         public static Top10Listener Listener = new(10);
         public static ClientEngine Engine = new();
         public static StringBuilder Output = new(1024);

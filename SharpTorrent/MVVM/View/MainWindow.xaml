@@ -52,7 +52,43 @@
             </StackPanel>
         </StackPanel>
         
-        <ContentControl Grid.Column="1"
+        <StackPanel Grid.Column="1"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Top" HorizontalAlignment="Right">
+            <StackPanel Background="Transparent" Width="700"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Height="30" Width="30">
+                    <Image Source="{Binding MinimizeIcon}"
+                           Height="25" Width="25"
+                           Margin="2.5"
+                           Style="{DynamicResource IconsTheme}">
+                        <Image.InputBindings>
+                            <MouseBinding Command="{Binding MinimizeCommand}" Gesture="LeftClick"/>
+                        </Image.InputBindings>
+                    </Image>
+                </StackPanel>
+                <StackPanel Height="30" Width="30">
+                    <Image Source="{Binding MaximizeIcon}"
+                           Height="25" Width="25" Margin="2.5"
+                           Style="{DynamicResource IconsTheme}">
+                        <Image.InputBindings>
+                            <MouseBinding Command="{Binding MaximizeCommand}" Gesture="LeftClick"/>
+                        </Image.InputBindings>
+                    </Image>
+                </StackPanel>
+                <StackPanel Height="30" Width="30">
+                    <Image Source="{Binding CloseIcon}"
+                           Height="25" Width="25" Margin="2.5"
+                           Style="{DynamicResource IconsTheme}">
+                        <Image.InputBindings>
+                            <MouseBinding Command="{Binding CloseCommand}" Gesture="LeftClick"/>
+                        </Image.InputBindings>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        
+        <ContentControl Grid.Column="1" Margin="30"
                         Content="{Binding CurrentView}"/>
         
     </Grid>

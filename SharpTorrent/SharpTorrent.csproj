@@ -11,4 +11,8 @@
     <PackageReference Include="MonoTorrent" Version="3.0.0-beta.rev0010" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Icons\" />
+  </ItemGroup>
+
 </Project>
