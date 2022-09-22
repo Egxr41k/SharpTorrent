@@ -10,7 +10,8 @@
         Height="540"
         Width="960"
         Background="Black"
-        WindowStyle="None">
+        WindowStyle="None"
+        ResizeMode="NoResize">
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
