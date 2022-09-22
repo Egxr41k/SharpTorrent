@@ -23,13 +23,25 @@ namespace SharpTorrent.MVVM.ViewModel
         public Base.Command? CloseCommand { get; set; }
 
         #region Icons
-        public BitmapImage MinimizeIcon { get => minimizeIcon; }
+        public BitmapImage MinimizeIcon
+        {
+            get => minimizeIcon;
+            set => Set(ref minimizeIcon, value);
+        }
         private BitmapImage minimizeIcon;
 
-        public BitmapImage MaximizeIcon { get => maximizeIcon; }
+        public BitmapImage MaximizeIcon
+        {
+            get => maximizeIcon;
+            set => Set(ref maximizeIcon, value);
+        }
         private BitmapImage maximizeIcon;
 
-        public BitmapImage CloseIcon { get => closeIcon; }
+        public BitmapImage CloseIcon
+        {
+            get => closeIcon;
+            set => Set(ref closeIcon, value);
+        }
         private BitmapImage closeIcon;
 
         #endregion
@@ -114,18 +126,12 @@ namespace SharpTorrent.MVVM.ViewModel
         }
         private void IconsInit()
         {
-            string iconsDirectory = MainModel.RESOURCEPATH + "\\Icons";
-            string[] iconsFiles = Directory.GetFiles(iconsDirectory);
-            BitmapImage[] icons =
-            {
-                CloseIcon,
-                MaximizeIcon,
-                MinimizeIcon,
-            };
-            for (int i = 0; i < icons.Length; i++)
-            {
-                icons[i] = new BitmapImage(new Uri(iconsFiles[i]));
-            }
+            string IconsDirectory = MainModel.RESOURCEPATH + "\\Icons";
+            string[] IconsFiles = Directory.GetFiles(IconsDirectory);
+
+            closeIcon = new BitmapImage(new Uri(IconsFiles[0]));
+            maximizeIcon = new BitmapImage(new Uri(IconsFiles[1]));
+            minimizeIcon = new BitmapImage(new Uri(IconsFiles[2]));
         }
 
         public MainViewModel()
@@ -152,6 +158,7 @@ namespace SharpTorrent.MVVM.ViewModel
             });
 
             IconsInit();
+            AppCommandsInit();
         }
     }
 }
