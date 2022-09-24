@@ -3,6 +3,7 @@ using MonoTorrent;
 using MonoTorrent.Client;
 using SharpTorrent.MVVM.Model;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Net;
@@ -17,7 +18,6 @@ namespace SharpTorrent.MVVM.ViewModel
     {
         public HomeViewModel HomeVM { get; set; }
         public Base.Command OpenFileCommand { get; set; }
-        public Base.Command AddNewTorrent { get; set; }
         public Base.Command? MaximizeCommand { get; set; }
         public Base.Command? MinimizeCommand { get; set; }
         public Base.Command? CloseCommand { get; set; }
@@ -106,23 +106,49 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref currentView, value);
         }
 
+        List<TorrentViewModel> TorrentVMs;
+
         private void TorrentsPreviwInit()
         {
-            foreach (TorrentManager manager in MainModel.Engine.Torrents)
+            for (int i = 0; i < MainModel.Engine.Torrents.Count; i++)
             {
-                ActiveTorrents.Add(
-                    new ListBoxItem
+                var newVM = new TorrentViewModel
+                {
+                    IsActive = true,
+                    TorrentName = MainModel.Engine.Torrents[i].Name,
+                    TorrentPath = MainModel.Engine.Torrents[i].SavePath,
+                    ProgressBarValue = (int)MainModel.Engine.Torrents[i].Progress
+                };
+
+                if (TorrentVMs[i] != newVM)
+                {
+                    TorrentVMs.Add(newVM);
+
+                    var newActive = new ListBoxItem
                     {
-                        DataContext = new TorrentViewModel
-                        {
-                            IsActive = true,
-                            TorrentName = manager.Name,
-                            TorrentPath = manager.SavePath,
-                            ProgressBarValue = (int)manager.Progress
-                        }
-                    }
-                );
+                        DataContext = newVM
+                    };
+                    if (ActiveTorrents[i] != newActive)
+                        ActiveTorrents.Add(newActive);
+                }
             }
+        }
+
+        private void AddNewActiveTorrent(TorrentManager manager)
+        {
+            TorrentVMs.Add(new TorrentViewModel
+            {
+                IsActive = true,
+                TorrentName = manager.Name,
+                TorrentPath = manager.SavePath,
+                ProgressBarValue = (int)manager.Progress
+            });
+
+            ActiveTorrents.Add(new ListBoxItem
+            {
+                DataContext = TorrentVMs[TorrentVMs.Count - 1],
+            });
+
         }
         private void IconsInit()
         {
@@ -150,11 +176,18 @@ namespace SharpTorrent.MVVM.ViewModel
                 {
                     //await Downloader.DownloadAsync(ofd.FileName);
                 }
+
+                 
             });
 
-            AddNewTorrent = new Base.Command(o =>
+            HomeViewModel.AddNewCommand = new Base.Command(o =>
             {
-
+                var downloader = MainModel.DownloadAsync(
+                    HomeVM.DownloadFile,
+                    HomeVM.SaveDirectory
+                );
+                downloader.Wait();
+                TorrentsPreviwInit();
             });
 
             IconsInit();
