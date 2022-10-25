@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EeNF3naLuu9jwfNNNp2TC78oDwmgoaoqqVxnKJd3Bh1zCdOzz6jvbxOLuoZGCe759G0+jNl3VXI4ndrM0CzPYQ==",
+  "dgSpecHash": "TYp2s3ljSrbNicjzxLAnH4FySd+oCHdLn0nGQyYt0w/BEAUf1whNxmq+Z+UXhs0eEPPyIWj3euLerSmYPt35lw==",
   "success": true,
-  "projectFilePath": "C:\\code\\.NET code\\C#Dev\\SharpTorrent\\SharpTorrent\\SharpTorrent.csproj",
+  "projectFilePath": "C:\\code\\Egxr41k\\C#_Dev\\SharpTorrent\\SharpTorrent\\SharpTorrent.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Егор Кравченко\\.nuget\\packages\\mono.nat\\3.0.0\\mono.nat.3.0.0.nupkg.sha512",
-    "C:\\Users\\Егор Кравченко\\.nuget\\packages\\monotorrent\\3.0.0-beta.rev0010\\monotorrent.3.0.0-beta.rev0010.nupkg.sha512",
-    "C:\\Users\\Егор Кравченко\\.nuget\\packages\\reusabletasks\\2.0.2\\reusabletasks.2.0.2.nupkg.sha512"
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\mono.nat\\3.0.0\\mono.nat.3.0.0.nupkg.sha512",
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\monotorrent\\3.0.0-beta.rev0010\\monotorrent.3.0.0-beta.rev0010.nupkg.sha512",
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\reusabletasks\\2.0.2\\reusabletasks.2.0.2.nupkg.sha512"
   ],
   "logs": []
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\
 SharpTorrent
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\code\.NET code\C#Dev\SharpTorrent\SharpTorrent\App.xaml
-1152719212
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\App.xaml
+12-260686966
 
-141949583722
-206321207
-MVVM\View\HomeView.xaml;MVVM\View\MainWindow.xaml;MVVM\View\Themes\DarkUI\DarkBg.xaml;MVVM\View\Themes\DarkUI\DarkBtn.xaml;MVVM\View\Themes\DarkUI\DarkMenu.xaml;MVVM\View\Themes\DarkUI\DarkScrollBar.xaml;MVVM\View\Themes\DarkUI\DarkText.xaml;MVVM\View\Themes\DarkUI\DarkTitle.xaml;MVVM\View\Themes\DarkUI\DarkTorrentsList.xaml;MVVM\View\Themes\General\IconsTheme.xaml;MVVM\View\TorrentView.xaml;
+16-898533841
+206-1834141499
+MVVM\View\AddNewTorrentView.xaml;MVVM\View\HomeView.xaml;MVVM\View\MainWindow.xaml;MVVM\View\Themes\DarkUI\DarkBg.xaml;MVVM\View\Themes\DarkUI\DarkBtn.xaml;MVVM\View\Themes\DarkUI\DarkMenu.xaml;MVVM\View\Themes\DarkUI\DarkScrollBar.xaml;MVVM\View\Themes\DarkUI\DarkText.xaml;MVVM\View\Themes\DarkUI\DarkTitle.xaml;MVVM\View\Themes\DarkUI\DarkTorrentsList.xaml;MVVM\View\Themes\General\IconsTheme.xaml;MVVM\View\TorrentView.xaml;
 
-False
+True
 

@@ -2,6 +2,7 @@
 using MonoTorrent;
 using MonoTorrent.Client;
 using SharpTorrent.MVVM.Model;
+using SharpTorrent.MVVM.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,10 +18,10 @@ namespace SharpTorrent.MVVM.ViewModel
     internal class MainViewModel : Base.ViewModel
     {
         public HomeViewModel HomeVM { get; set; }
-        public Base.Command OpenFileCommand { get; set; }
         public Base.Command? MaximizeCommand { get; set; }
         public Base.Command? MinimizeCommand { get; set; }
         public Base.Command? CloseCommand { get; set; }
+        public Base.Command AddNewCommand { get; set; }
 
         #region Icons
         public BitmapImage MinimizeIcon
@@ -106,35 +107,9 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref currentView, value);
         }
 
-        List<TorrentViewModel> TorrentVMs;
+        static List<TorrentViewModel> TorrentVMs;
 
-        private void TorrentsPreviwInit()
-        {
-            for (int i = 0; i < MainModel.Engine.Torrents.Count; i++)
-            {
-                var newVM = new TorrentViewModel
-                {
-                    IsActive = true,
-                    TorrentName = MainModel.Engine.Torrents[i].Name,
-                    TorrentPath = MainModel.Engine.Torrents[i].SavePath,
-                    ProgressBarValue = (int)MainModel.Engine.Torrents[i].Progress
-                };
-
-                if (TorrentVMs[i] != newVM)
-                {
-                    TorrentVMs.Add(newVM);
-
-                    var newActive = new ListBoxItem
-                    {
-                        DataContext = newVM
-                    };
-                    if (ActiveTorrents[i] != newActive)
-                        ActiveTorrents.Add(newActive);
-                }
-            }
-        }
-
-        private void AddNewActiveTorrent(TorrentManager manager)
+        public void AddNewActiveTorrent(TorrentManager manager)
         {
             TorrentVMs.Add(new TorrentViewModel
             {
@@ -146,7 +121,7 @@ namespace SharpTorrent.MVVM.ViewModel
 
             ActiveTorrents.Add(new ListBoxItem
             {
-                DataContext = TorrentVMs[TorrentVMs.Count - 1],
+                DataContext = TorrentVMs[^1],
             });
 
         }
@@ -165,29 +140,11 @@ namespace SharpTorrent.MVVM.ViewModel
             HomeVM = new();
             currentView = HomeVM;
 
-            OpenFileCommand = new Base.Command(/*async*/ o =>
+            AddNewCommand = new Base.Command(o =>
             {
-                OpenFileDialog ofd = new()
-                {
-                    Filter = "Torrent Files(*.torrent)|*.torrent"
-                };
-
-                if (ofd.ShowDialog() == true)
-                {
-                    //await Downloader.DownloadAsync(ofd.FileName);
-                }
-
-                 
-            });
-
-            HomeViewModel.AddNewCommand = new Base.Command(o =>
-            {
-                var downloader = MainModel.DownloadAsync(
-                    HomeVM.DownloadFile,
-                    HomeVM.SaveDirectory
-                );
-                downloader.Wait();
-                TorrentsPreviwInit();
+                //AddNewActiveTorrent();
+                AddNewTorrentView view = new();
+                view.Show();
             });
 
             IconsInit();

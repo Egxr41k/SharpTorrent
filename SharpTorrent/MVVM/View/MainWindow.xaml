@@ -68,6 +68,11 @@
 
                 </StackPanel>
             </StackPanel>
+            <Button FontFamily="/Resources/Fonts/#Montserrat"
+                    Content="Add New"
+                    Width="100"
+                    Height="50"
+                    Command="{Binding AddNewCommand}"/>
         </StackPanel>
         
         <StackPanel Grid.Column="1"

@@ -20,17 +20,17 @@ namespace SharpTorrent.MVVM.Model
         public static Top10Listener Listener = new(10);
         public static ClientEngine Engine = new();
         public static StringBuilder Output = new(1024);
+        public static TorrentManager Manager;
 
 
-        static async void DownloadAsync(
+        public static async void DownloadAsync(
             string TorrentPath, string DownloadPath)
 
         {
-            TorrentManager manager;
             try
             {
                 var settingsBuilder = new TorrentSettingsBuilder();
-                manager = await Engine.AddAsync(
+                Manager = await Engine.AddAsync(
                     await Torrent.LoadAsync(
                         TorrentPath ?? "#"),
                     DownloadPath ?? "#",
@@ -39,48 +39,48 @@ namespace SharpTorrent.MVVM.Model
             }
             catch (Exception e) { Console.WriteLine("Couldn't decode file. " + e.Message); }
 
-            manager = Engine.Torrents[0];
+            Manager = Engine.Torrents[0];
 
             #region events
-            manager.PeersFound += delegate (object? sender, PeersAddedEventArgs e)
+            Manager.PeersFound += delegate (object? sender, PeersAddedEventArgs e)
             {
                 lock (Listener)
                     Listener.WriteLine($"Found {e.NewPeers} new peers and {e.ExistingPeers} existing peers");
             };
 
-            manager.PeerConnected += (o, e) =>
+            Manager.PeerConnected += (o, e) =>
             {
                 lock (Listener)
                     Listener.WriteLine($"Connection succeeded: {e.Peer.Uri}");
             };
 
-            manager.ConnectionAttemptFailed += (o, e) =>
+            Manager.ConnectionAttemptFailed += (o, e) =>
             {
                 lock (Listener)
                     Listener.WriteLine(
                         $"Connection failed: {e.Peer.ConnectionUri} - {e.Reason}");
             };
 
-            manager.PieceHashed += delegate (object? o, PieceHashedEventArgs e)
+            Manager.PieceHashed += delegate (object? o, PieceHashedEventArgs e)
             {
                 lock (Listener)
                     Listener.WriteLine($"Piece Hashed: {e.PieceIndex} - {(e.HashPassed ? "Pass" : "Fail")}");
             };
 
-            manager.TorrentStateChanged += delegate (object? o, TorrentStateChangedEventArgs e)
+            Manager.TorrentStateChanged += delegate (object? o, TorrentStateChangedEventArgs e)
             {
                 lock (Listener)
                     Listener.WriteLine($"OldState: {e.OldState} NewState: {e.NewState}");
             };
 
-            manager.TrackerManager.AnnounceComplete += (sender, e) =>
+            Manager.TrackerManager.AnnounceComplete += (sender, e) =>
             {
                 Listener.WriteLine($"{e.Successful}: {e.Tracker}");
             };
 
             #endregion
 
-            await manager.StartAsync();
+            await Manager.StartAsync();
         }
     }
 }
