@@ -24,5 +24,11 @@ namespace SharpTorrent.MVVM.View
         {
             InitializeComponent();
         }
+
+        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
+        }
     }
 }

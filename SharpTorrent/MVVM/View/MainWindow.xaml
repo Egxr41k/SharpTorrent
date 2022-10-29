@@ -51,7 +51,7 @@
                            Style="{DynamicResource DarkText}"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Height="400">
                 <StackPanel Margin="0,20">
                     <TextBlock Text="{Binding Active}"
                                Style="{DynamicResource DarkText}"
@@ -68,7 +68,8 @@
 
                 </StackPanel>
             </StackPanel>
-            <Button FontFamily="/Resources/Fonts/#Montserrat"
+            <Button Style="{StaticResource DarkBtn}"
+                    FontFamily="/Resources/Fonts/#Montserrat"
                     Content="Add New"
                     Width="100"
                     Height="50"
@@ -78,7 +79,7 @@
         <StackPanel Grid.Column="1"
                     Orientation="Horizontal"
                     VerticalAlignment="Top" HorizontalAlignment="Right">
-            <StackPanel Background="Transparent" Width="700"/>
+            <StackPanel Background="Transparent" Width="700" MouseDown="StackPanel_MouseDown"/>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Height="30" Width="30">
                     <Image Source="{Binding MinimizeIcon}"

@@ -54,7 +54,7 @@ namespace SharpTorrent.MVVM.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SharpTorrent;V1.0.0.0;component/mvvm/view/addnewtorrentview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SharpTorrent;component/mvvm/view/addnewtorrentview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\View\AddNewTorrentView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

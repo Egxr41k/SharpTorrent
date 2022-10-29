@@ -2,7 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type Button}"
            x:Key="DarkBtn">
-        <Style.Setters>
+        <Setter Property="Background" Value="#333"/>
+        <Setter Property="Foreground" Value="#fff"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <!--<Style.Setters>
             <Setter Property="Height" Value="50"/>
             <Setter Property="Width" Value="200"/>
             <Setter Property="Foreground" Value="#000"/>
@@ -17,20 +20,25 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style.Setters>
+        </Style.Setters>-->
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Effect">
+                <!--<Setter Property="Effect">
                     <Setter.Value>
                         <DropShadowEffect Color="White"
                                           Opacity="0.5"
                                           BlurRadius="50"
                                           ShadowDepth="0"/>
                     </Setter.Value>
-                </Setter>
+                </Setter>-->
+                <Setter Property="Opacity" Value="0.5"/>
+                <Setter Property="Background" Value="#333"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="LightGray"/>
+                <!--<Setter Property="Background" Value="LightGray"/>-->
+                <Setter Property="Opacity" Value="0.3"/>
+                <Setter Property="Background" Value="#333"/>
+
             </Trigger>
         </Style.Triggers>
     </Style>

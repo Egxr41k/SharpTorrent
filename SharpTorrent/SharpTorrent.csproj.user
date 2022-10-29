@@ -33,6 +33,9 @@
     <Page Update="MVVM\View\Themes\DarkUI\DarkBtn.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="MVVM\View\Themes\DarkUI\DarkButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MVVM\View\Themes\DarkUI\DarkMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
