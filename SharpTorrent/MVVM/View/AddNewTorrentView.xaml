@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SharpTorrent.MVVM.View"
         xmlns:viewmodel="clr-namespace:SharpTorrent.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="AddNewTorrentView" Height="100" Width="200">
+        Title="AddNewTorrentView" Height="200" Width="400">
     <Window.DataContext>
         <viewmodel:AddNewTorrentViewModel/>
     </Window.DataContext>
@@ -16,27 +16,37 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBox Width="200"
                      Height="50"
-                     Grid.Row="0" Text="{Binding DownloadFile}"/>
+                     Grid.Row="0" Text="{Binding DownloadFile, Mode=TwoWay}"/>
+            <Button Height="50"
+                    Width="50"
+                    Content="..."
+                    Command="{Binding OpenFileCommand}"/>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <TextBox Width="200"
+            <TextBox Width="250"
                      Height="50"
-                     Text="{Binding SaveDirectory}"/>
+                     Text="{Binding SaveDirectory, Mode=TwoWay}"/>
         </StackPanel>
-        <StackPanel Grid.Row="2">
-            <Button FontFamily="/Resources/Fonts/#Montserrat"
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                    FontFamily="/Resources/Fonts/#Montserrat"
                     Content="Cancel"
                     Width="100"
                     Height="50"
                     IsCancel="True"/>
-            <Button FontFamily="/Resources/Fonts/#Montserrat"
+            <Button Grid.Column="1" 
+                    FontFamily="/Resources/Fonts/#Montserrat"
                     Content="OK"
                     Width="100"
-                    Height="50"
+                    Height="50" Command="{Binding OKCommand}"
                     IsEnabled="{Binding IsEnabled}"/>
-        </StackPanel>
+        </Grid>
     </Grid>
 </Window>

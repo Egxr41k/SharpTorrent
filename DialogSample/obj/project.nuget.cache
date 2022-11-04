@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "9pnX9k5wJKmlDwRGjHc5auIjU7x7AJuly7Eu0sFk5RH94k9PJRo6bl3gB7dyUWQHJMrVVl3MfjWDq64SQZk7hA==",
+  "success": true,
+  "projectFilePath": "C:\\code\\Egxr41k\\C#_Dev\\SharpTorrent\\DialogSample\\DialogSample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\mono.nat\\3.0.0\\mono.nat.3.0.0.nupkg.sha512",
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\monotorrent\\3.0.0-beta.rev0010\\monotorrent.3.0.0-beta.rev0010.nupkg.sha512",
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\reusabletasks\\2.0.2\\reusabletasks.2.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

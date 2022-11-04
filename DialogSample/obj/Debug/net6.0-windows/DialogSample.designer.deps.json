@@ -1,0 +1,151 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.31.10800"
+          }
+        }
+      },
+      "Mono.Nat/3.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/Mono.Nat.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "MonoTorrent/3.0.0-beta.rev0010": {
+        "dependencies": {
+          "Mono.Nat": "3.0.0",
+          "ReusableTasks": "2.0.2"
+        },
+        "runtime": {
+          "lib/net5.0/MonoTorrent.BEncoding.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.Client.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.Connections.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.Dht.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.Factories.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.Messages.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.PiecePicking.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.PieceWriter.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.PortForwarding.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.Trackers.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/net5.0/MonoTorrent.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "Prism.Core/8.1.97": {
+        "runtime": {
+          "lib/net5.0/Prism.dll": {
+            "assemblyVersion": "8.1.97.5141",
+            "fileVersion": "8.1.97.5141"
+          }
+        }
+      },
+      "Prism.Wpf/8.1.97": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
+          "Prism.Core": "8.1.97"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {
+            "assemblyVersion": "8.1.97.5141",
+            "fileVersion": "8.1.97.5141"
+          }
+        }
+      },
+      "ReusableTasks/2.0.2": {
+        "runtime": {
+          "lib/net5.0/ReusableTasks.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "2.0.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.31",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512"
+    },
+    "Mono.Nat/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LgRC8/8plJfvr1nCPmyHNIwP4fs346doMA/UVDZvFN0RfGJdyD2uS7Dl1AydxjVLrIvad8ghozI0vYFWcfPeYQ==",
+      "path": "mono.nat/3.0.0",
+      "hashPath": "mono.nat.3.0.0.nupkg.sha512"
+    },
+    "MonoTorrent/3.0.0-beta.rev0010": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EJY4tx6IqXFg554INUOpMz5Q+FYpxIsnEq6kZ/Qo7Q+snGpGux1WviZy4pdJU1SS9J/bkowJljJ1GyzZkm1Czg==",
+      "path": "monotorrent/3.0.0-beta.rev0010",
+      "hashPath": "monotorrent.3.0.0-beta.rev0010.nupkg.sha512"
+    },
+    "Prism.Core/8.1.97": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EP5zrvWddw3eSq25Y7hHnDYdmLZEC2Z/gMrvmHzUuLbitmA1UaS7wQUlSwNr9Km8lzJNCvytFnaGBEFukHgoHg==",
+      "path": "prism.core/8.1.97",
+      "hashPath": "prism.core.8.1.97.nupkg.sha512"
+    },
+    "Prism.Wpf/8.1.97": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZEa6S1mK35h8/blyb0uR0ed3wkpHtPdhB4eniXINJnTiJMWlGl/As6SVlFFdOPD+qsEdWNYV3xgyQD/ue5cvBA==",
+      "path": "prism.wpf/8.1.97",
+      "hashPath": "prism.wpf.8.1.97.nupkg.sha512"
+    },
+    "ReusableTasks/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kcjeEG1ilLuhxfEfPcCwXMeZOKxhlKrFT/d8GjHln1PKv3u8zNB1KESCcbpTktFW99Do5FulF2PzeF5ZKY+oVg==",
+      "path": "reusabletasks/2.0.2",
+      "hashPath": "reusabletasks.2.0.2.nupkg.sha512"
+    }
+  }
+}

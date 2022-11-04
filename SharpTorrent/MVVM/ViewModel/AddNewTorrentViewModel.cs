@@ -17,6 +17,9 @@ namespace SharpTorrent.MVVM.ViewModel
         public Base.Command OKCommand { get; set; }
         public Base.Command OpenFileCommand { get; set; }
 
+        
+
+
         public bool IsAdded = false;
 
         private bool isEnabled = false;
@@ -60,12 +63,25 @@ namespace SharpTorrent.MVVM.ViewModel
 
                 if (ofd.ShowDialog() == true)
                 {
-                    downloadFile = Path.GetFileName(ofd.FileName);
-                    saveDirectory = Path.GetDirectoryName(ofd.FileName);
-                    isEnabled = true;
+                    // need to create the folder with name of name opened file
+
+                    DownloadFile = ofd.FileName;        // return full path to the File
+                    
+                    string dirName = DownloadFile       
+                                    .Split('\\').Last() // return the file name with extension
+                                    .Split('.').First();// return file name without extension
+
+
+                    string directoryPath = Path.Combine(
+                                           Path.GetDirectoryName(ofd.FileName) + // return the path of parrent directory
+                                           "\\" +
+                                           dirName);
+
+                    Directory.CreateDirectory(directoryPath);
+
+                    SaveDirectory = directoryPath; // the end
+                    IsEnabled = true;
                 }
-
-
             });
         }
     }

@@ -20,13 +20,14 @@ namespace SharpTorrent.MVVM.Model
         public static Top10Listener Listener = new(10);
         public static ClientEngine Engine = new();
         public static StringBuilder Output = new(1024);
-        public static TorrentManager Manager;
+        //public static TorrentManager Manager;
 
 
-        public static async void DownloadAsync(
+        public static async Task<TorrentManager> DownloadAsync(
             string TorrentPath, string DownloadPath)
 
         {
+            TorrentManager Manager;
             try
             {
                 var settingsBuilder = new TorrentSettingsBuilder();
@@ -81,6 +82,7 @@ namespace SharpTorrent.MVVM.Model
             #endregion
 
             await Manager.StartAsync();
+            return Manager;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SharpTorrent.MVVM.ViewModel.Base
 {
-    internal abstract class ViewModel : INotifyPropertyChanged, IDisposable
+    public abstract class ViewModel : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

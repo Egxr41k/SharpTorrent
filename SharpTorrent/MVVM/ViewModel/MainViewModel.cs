@@ -7,11 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+
 
 namespace SharpTorrent.MVVM.ViewModel
 {
@@ -130,7 +133,7 @@ namespace SharpTorrent.MVVM.ViewModel
             string IconsDirectory = MainModel.RESOURCEPATH + "\\Icons";
             string[] IconsFiles = Directory.GetFiles(IconsDirectory);
 
-            closeIcon = new BitmapImage(new Uri(IconsFiles[0]));
+            closeIcon    = new BitmapImage(new Uri(IconsFiles[0]));
             maximizeIcon = new BitmapImage(new Uri(IconsFiles[1]));
             minimizeIcon = new BitmapImage(new Uri(IconsFiles[2]));
         }
@@ -143,8 +146,41 @@ namespace SharpTorrent.MVVM.ViewModel
             AddNewCommand = new Base.Command(o =>
             {
                 //AddNewActiveTorrent();
-                AddNewTorrentView view = new();
-                view.Show();
+                //AddNewTorrentView view = new();
+                //view.Show();
+                OpenFileDialog ofd = new()
+                {
+                    Filter = "Torrent Files(*.torrent)|*.torrent"
+                };
+
+                if (ofd.ShowDialog() == true)
+                {
+                    // need to create the folder with name of name opened file
+
+                    var DownloadFile = ofd.FileName;        // return full path to the File
+
+                    string dirName = DownloadFile
+                                    .Split('\\').Last() // return the file name with extension
+                                    .Split('.').First();// return file name without extension
+
+
+                    string directoryPath = Path.Combine(
+                                           Path.GetDirectoryName(ofd.FileName) + // return the path of parrent directory
+                                           "\\" +
+                                           dirName);
+
+                    Directory.CreateDirectory(directoryPath);
+
+                    var SaveDirectory = directoryPath; // the end
+                    try
+                    {
+                        var task = MainModel.DownloadAsync(DownloadFile, SaveDirectory);
+                        Thread.Sleep(10000);
+                    }
+                    catch (Exception) { }
+                }
+                
+                AddNewActiveTorrent(MainModel.Manager);
             });
 
             IconsInit();

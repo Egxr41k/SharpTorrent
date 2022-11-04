@@ -1,0 +1,483 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mono.Nat/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Mono.Nat.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MonoTorrent/3.0.0-beta.rev0010": {
+        "type": "package",
+        "dependencies": {
+          "Mono.Nat": "[3.0.0, 4.0.0)",
+          "ReusableTasks": "[2.0.2, 3.0.0)"
+        },
+        "compile": {
+          "lib/net5.0/MonoTorrent.BEncoding.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Client.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Connections.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Dht.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Factories.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Messages.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.PiecePicking.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.PieceWriter.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.PortForwarding.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Trackers.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.dll": {
+            "related": ".BEncoding.xml;.Client.xml;.Connections.xml;.Dht.xml;.Factories.xml;.Messages.xml;.PiecePicking.xml;.PieceWriter.xml;.PortForwarding.xml;.Trackers.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/MonoTorrent.BEncoding.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Client.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Connections.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Dht.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Factories.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Messages.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.PiecePicking.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.PieceWriter.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.PortForwarding.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.Trackers.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0/MonoTorrent.dll": {
+            "related": ".BEncoding.xml;.Client.xml;.Connections.xml;.Dht.xml;.Factories.xml;.Messages.xml;.PiecePicking.xml;.PieceWriter.xml;.PortForwarding.xml;.Trackers.xml;.xml"
+          }
+        }
+      },
+      "Prism.Core/8.1.97": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Prism.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Prism.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Prism.Wpf/8.1.97": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
+          "Prism.Core": "8.1.97"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "ReusableTasks/2.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/ReusableTasks.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/ReusableTasks.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
+      "SharpTorrent/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MonoTorrent": "3.0.0-beta.rev0010"
+        },
+        "compile": {
+          "bin/placeholder/SharpTorrent.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SharpTorrent.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+      "sha512": "LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
+      "type": "package",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.31",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Design/Microsoft.Xaml.Behaviors.Design.dll",
+        "lib/net45/Microsoft.Xaml.Behaviors.dll",
+        "lib/net45/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net45/Microsoft.Xaml.Behaviors.xml",
+        "lib/net5.0-windows7.0/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.xml",
+        "lib/netcoreapp3.1/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.dll",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.pdb",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.xml",
+        "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+        "microsoft.xaml.behaviors.wpf.nuspec",
+        "tools/Install.ps1"
+      ]
+    },
+    "Mono.Nat/3.0.0": {
+      "sha512": "LgRC8/8plJfvr1nCPmyHNIwP4fs346doMA/UVDZvFN0RfGJdyD2uS7Dl1AydxjVLrIvad8ghozI0vYFWcfPeYQ==",
+      "type": "package",
+      "path": "mono.nat/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/netstandard2.0/Mono.Nat.dll",
+        "lib/netstandard2.0/Mono.Nat.xml",
+        "lib/netstandard2.1/Mono.Nat.dll",
+        "lib/netstandard2.1/Mono.Nat.xml",
+        "mono.nat.3.0.0.nupkg.sha512",
+        "mono.nat.nuspec"
+      ]
+    },
+    "MonoTorrent/3.0.0-beta.rev0010": {
+      "sha512": "EJY4tx6IqXFg554INUOpMz5Q+FYpxIsnEq6kZ/Qo7Q+snGpGux1WviZy4pdJU1SS9J/bkowJljJ1GyzZkm1Czg==",
+      "type": "package",
+      "path": "monotorrent/3.0.0-beta.rev0010",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net5.0/MonoTorrent.BEncoding.dll",
+        "lib/net5.0/MonoTorrent.BEncoding.xml",
+        "lib/net5.0/MonoTorrent.Client.dll",
+        "lib/net5.0/MonoTorrent.Client.xml",
+        "lib/net5.0/MonoTorrent.Connections.dll",
+        "lib/net5.0/MonoTorrent.Connections.xml",
+        "lib/net5.0/MonoTorrent.Dht.dll",
+        "lib/net5.0/MonoTorrent.Dht.xml",
+        "lib/net5.0/MonoTorrent.Factories.dll",
+        "lib/net5.0/MonoTorrent.Factories.xml",
+        "lib/net5.0/MonoTorrent.Messages.dll",
+        "lib/net5.0/MonoTorrent.Messages.xml",
+        "lib/net5.0/MonoTorrent.PiecePicking.dll",
+        "lib/net5.0/MonoTorrent.PiecePicking.xml",
+        "lib/net5.0/MonoTorrent.PieceWriter.dll",
+        "lib/net5.0/MonoTorrent.PieceWriter.xml",
+        "lib/net5.0/MonoTorrent.PortForwarding.dll",
+        "lib/net5.0/MonoTorrent.PortForwarding.xml",
+        "lib/net5.0/MonoTorrent.Trackers.dll",
+        "lib/net5.0/MonoTorrent.Trackers.xml",
+        "lib/net5.0/MonoTorrent.dll",
+        "lib/net5.0/MonoTorrent.xml",
+        "lib/netcoreapp3.0/MonoTorrent.BEncoding.dll",
+        "lib/netcoreapp3.0/MonoTorrent.BEncoding.xml",
+        "lib/netcoreapp3.0/MonoTorrent.Client.dll",
+        "lib/netcoreapp3.0/MonoTorrent.Client.xml",
+        "lib/netcoreapp3.0/MonoTorrent.Connections.dll",
+        "lib/netcoreapp3.0/MonoTorrent.Connections.xml",
+        "lib/netcoreapp3.0/MonoTorrent.Dht.dll",
+        "lib/netcoreapp3.0/MonoTorrent.Dht.xml",
+        "lib/netcoreapp3.0/MonoTorrent.Factories.dll",
+        "lib/netcoreapp3.0/MonoTorrent.Factories.xml",
+        "lib/netcoreapp3.0/MonoTorrent.Messages.dll",
+        "lib/netcoreapp3.0/MonoTorrent.Messages.xml",
+        "lib/netcoreapp3.0/MonoTorrent.PiecePicking.dll",
+        "lib/netcoreapp3.0/MonoTorrent.PiecePicking.xml",
+        "lib/netcoreapp3.0/MonoTorrent.PieceWriter.dll",
+        "lib/netcoreapp3.0/MonoTorrent.PieceWriter.xml",
+        "lib/netcoreapp3.0/MonoTorrent.PortForwarding.dll",
+        "lib/netcoreapp3.0/MonoTorrent.PortForwarding.xml",
+        "lib/netcoreapp3.0/MonoTorrent.Trackers.dll",
+        "lib/netcoreapp3.0/MonoTorrent.Trackers.xml",
+        "lib/netcoreapp3.0/MonoTorrent.dll",
+        "lib/netcoreapp3.0/MonoTorrent.xml",
+        "lib/netstandard2.0/MonoTorrent.BEncoding.dll",
+        "lib/netstandard2.0/MonoTorrent.BEncoding.xml",
+        "lib/netstandard2.0/MonoTorrent.Client.dll",
+        "lib/netstandard2.0/MonoTorrent.Client.xml",
+        "lib/netstandard2.0/MonoTorrent.Connections.dll",
+        "lib/netstandard2.0/MonoTorrent.Connections.xml",
+        "lib/netstandard2.0/MonoTorrent.Dht.dll",
+        "lib/netstandard2.0/MonoTorrent.Dht.xml",
+        "lib/netstandard2.0/MonoTorrent.Factories.dll",
+        "lib/netstandard2.0/MonoTorrent.Factories.xml",
+        "lib/netstandard2.0/MonoTorrent.Messages.dll",
+        "lib/netstandard2.0/MonoTorrent.Messages.xml",
+        "lib/netstandard2.0/MonoTorrent.PiecePicking.dll",
+        "lib/netstandard2.0/MonoTorrent.PiecePicking.xml",
+        "lib/netstandard2.0/MonoTorrent.PieceWriter.dll",
+        "lib/netstandard2.0/MonoTorrent.PieceWriter.xml",
+        "lib/netstandard2.0/MonoTorrent.PortForwarding.dll",
+        "lib/netstandard2.0/MonoTorrent.PortForwarding.xml",
+        "lib/netstandard2.0/MonoTorrent.Trackers.dll",
+        "lib/netstandard2.0/MonoTorrent.Trackers.xml",
+        "lib/netstandard2.0/MonoTorrent.dll",
+        "lib/netstandard2.0/MonoTorrent.xml",
+        "lib/netstandard2.1/MonoTorrent.BEncoding.dll",
+        "lib/netstandard2.1/MonoTorrent.BEncoding.xml",
+        "lib/netstandard2.1/MonoTorrent.Client.dll",
+        "lib/netstandard2.1/MonoTorrent.Client.xml",
+        "lib/netstandard2.1/MonoTorrent.Connections.dll",
+        "lib/netstandard2.1/MonoTorrent.Connections.xml",
+        "lib/netstandard2.1/MonoTorrent.Dht.dll",
+        "lib/netstandard2.1/MonoTorrent.Dht.xml",
+        "lib/netstandard2.1/MonoTorrent.Factories.dll",
+        "lib/netstandard2.1/MonoTorrent.Factories.xml",
+        "lib/netstandard2.1/MonoTorrent.Messages.dll",
+        "lib/netstandard2.1/MonoTorrent.Messages.xml",
+        "lib/netstandard2.1/MonoTorrent.PiecePicking.dll",
+        "lib/netstandard2.1/MonoTorrent.PiecePicking.xml",
+        "lib/netstandard2.1/MonoTorrent.PieceWriter.dll",
+        "lib/netstandard2.1/MonoTorrent.PieceWriter.xml",
+        "lib/netstandard2.1/MonoTorrent.PortForwarding.dll",
+        "lib/netstandard2.1/MonoTorrent.PortForwarding.xml",
+        "lib/netstandard2.1/MonoTorrent.Trackers.dll",
+        "lib/netstandard2.1/MonoTorrent.Trackers.xml",
+        "lib/netstandard2.1/MonoTorrent.dll",
+        "lib/netstandard2.1/MonoTorrent.xml",
+        "monotorrent.3.0.0-beta.rev0010.nupkg.sha512",
+        "monotorrent.nuspec"
+      ]
+    },
+    "Prism.Core/8.1.97": {
+      "sha512": "EP5zrvWddw3eSq25Y7hHnDYdmLZEC2Z/gMrvmHzUuLbitmA1UaS7wQUlSwNr9Km8lzJNCvytFnaGBEFukHgoHg==",
+      "type": "package",
+      "path": "prism.core/8.1.97",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net461/Prism.dll",
+        "lib/net461/Prism.pdb",
+        "lib/net461/Prism.xml",
+        "lib/net47/Prism.dll",
+        "lib/net47/Prism.pdb",
+        "lib/net47/Prism.xml",
+        "lib/net5.0/Prism.dll",
+        "lib/net5.0/Prism.pdb",
+        "lib/net5.0/Prism.xml",
+        "lib/netstandard2.0/Prism.dll",
+        "lib/netstandard2.0/Prism.pdb",
+        "lib/netstandard2.0/Prism.xml",
+        "prism-logo.png",
+        "prism.core.8.1.97.nupkg.sha512",
+        "prism.core.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Prism.Wpf/8.1.97": {
+      "sha512": "ZEa6S1mK35h8/blyb0uR0ed3wkpHtPdhB4eniXINJnTiJMWlGl/As6SVlFFdOPD+qsEdWNYV3xgyQD/ue5cvBA==",
+      "type": "package",
+      "path": "prism.wpf/8.1.97",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net461/Prism.Wpf.dll",
+        "lib/net461/Prism.Wpf.pdb",
+        "lib/net461/Prism.Wpf.xml",
+        "lib/net47/Prism.Wpf.dll",
+        "lib/net47/Prism.Wpf.pdb",
+        "lib/net47/Prism.Wpf.xml",
+        "lib/net5.0-windows7.0/Prism.Wpf.dll",
+        "lib/net5.0-windows7.0/Prism.Wpf.pdb",
+        "lib/net5.0-windows7.0/Prism.Wpf.xml",
+        "lib/netcoreapp3.1/Prism.Wpf.dll",
+        "lib/netcoreapp3.1/Prism.Wpf.pdb",
+        "lib/netcoreapp3.1/Prism.Wpf.xml",
+        "prism-logo.png",
+        "prism.wpf.8.1.97.nupkg.sha512",
+        "prism.wpf.nuspec",
+        "readme.txt"
+      ]
+    },
+    "ReusableTasks/2.0.2": {
+      "sha512": "kcjeEG1ilLuhxfEfPcCwXMeZOKxhlKrFT/d8GjHln1PKv3u8zNB1KESCcbpTktFW99Do5FulF2PzeF5ZKY+oVg==",
+      "type": "package",
+      "path": "reusabletasks/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "build/AsyncVoidMethodBuilder.cs",
+        "build/ReusableTasks.targets",
+        "lib/net5.0/ReusableTasks.dll",
+        "lib/net5.0/ReusableTasks.xml",
+        "lib/netcoreapp3.0/ReusableTasks.dll",
+        "lib/netcoreapp3.0/ReusableTasks.xml",
+        "lib/netstandard2.0/ReusableTasks.dll",
+        "lib/netstandard2.0/ReusableTasks.xml",
+        "lib/netstandard2.1/ReusableTasks.dll",
+        "lib/netstandard2.1/ReusableTasks.xml",
+        "reusabletasks.2.0.2.nupkg.sha512",
+        "reusabletasks.nuspec"
+      ]
+    },
+    "SharpTorrent/1.0.0": {
+      "type": "project",
+      "path": "../SharpTorrent/SharpTorrent.csproj",
+      "msbuildProject": "../SharpTorrent/SharpTorrent.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "Prism.Wpf >= 8.1.97",
+      "SharpTorrent >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\code\\Egxr41k\\C#_Dev\\SharpTorrent\\DialogSample\\DialogSample.csproj",
+      "projectName": "DialogSample",
+      "projectPath": "C:\\code\\Egxr41k\\C#_Dev\\SharpTorrent\\DialogSample\\DialogSample.csproj",
+      "packagesPath": "C:\\Users\\Egxr41k\\.nuget\\packages\\",
+      "outputPath": "C:\\code\\Egxr41k\\C#_Dev\\SharpTorrent\\DialogSample\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Egxr41k\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {
+            "C:\\code\\Egxr41k\\C#_Dev\\SharpTorrent\\SharpTorrent\\SharpTorrent.csproj": {
+              "projectPath": "C:\\code\\Egxr41k\\C#_Dev\\SharpTorrent\\SharpTorrent\\SharpTorrent.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "Prism.Wpf": {
+            "target": "Package",
+            "version": "[8.1.97, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
