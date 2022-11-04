@@ -2,25 +2,25 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type Button}"
            x:Key="DarkBtn">
-        <Setter Property="Background" Value="#333"/>
+        <!--<Setter Property="Background" Value="#333"/>
         <Setter Property="Foreground" Value="#fff"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <!--<Style.Setters>
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="Width" Value="200"/>
-            <Setter Property="Foreground" Value="#000"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Background" Value="#fff"/>
+        <Setter Property="BorderThickness" Value="0"/>-->
+        <Style.Setters>
+            <!--<Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="200"/>-->
+            <Setter Property="Foreground" Value="#fff"/>
+            <!--<Setter Property="FontSize" Value="14"/>-->
+            <Setter Property="Background" Value="#333"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                        <Border Background="{TemplateBinding Background}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style.Setters>-->
+        </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <!--<Setter Property="Effect">
@@ -31,13 +31,13 @@
                                           ShadowDepth="0"/>
                     </Setter.Value>
                 </Setter>-->
-                <Setter Property="Opacity" Value="0.5"/>
-                <Setter Property="Background" Value="#333"/>
+                <!--<Setter Property="Opacity" Value="0.5"/>
+                <Setter Property="Background" Value="#333"/>-->
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <!--<Setter Property="Background" Value="LightGray"/>-->
-                <Setter Property="Opacity" Value="0.3"/>
-                <Setter Property="Background" Value="#333"/>
+                <!--<Setter Property="Opacity" Value="0.3"/>
+                <Setter Property="Background" Value="#333"/>-->
 
             </Trigger>
         </Style.Triggers>

@@ -4,8 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SharpTorrent.MVVM.View"
+             xmlns:viewmodel="clr-namespace:SharpTorrent.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="760">
+    <UserControl.DataContext>
+        <viewmodel:TorrentViewModel/>
+    </UserControl.DataContext>
     <StackPanel Margin="10">
         <TextBlock Margin="20, 0, 0, 15"
                    Foreground="#fff"
@@ -16,6 +20,7 @@
                      Height="400"
                      Background="#0A0A0A"
                      BorderBrush="#484848"
-                     BorderThickness="1"/>
+                     BorderThickness="1"
+                     DataContext="{Binding Text}"/>
     </StackPanel>
 </UserControl>

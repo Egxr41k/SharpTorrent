@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace SharpTorrent.MVVM.ViewModel
 {
     internal class TorrentViewModel : Base.ViewModel
     {
+        public TextRange Text
+        {
+            get => text;
+            set => Set(ref text, value);
+        }
+        private TextRange text;
+
         public bool IsActive { get; set; }
 
         public string? TorrentName { get; set; }

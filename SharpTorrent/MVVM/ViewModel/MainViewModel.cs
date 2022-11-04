@@ -180,7 +180,7 @@ namespace SharpTorrent.MVVM.ViewModel
                     catch (Exception) { }
                 }
                 
-                AddNewActiveTorrent(MainModel.Manager);
+                //AddNewActiveTorrent(MainModel.Manager);
             });
 
             IconsInit();

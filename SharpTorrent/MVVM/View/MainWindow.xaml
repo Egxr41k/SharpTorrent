@@ -68,7 +68,7 @@
 
                 </StackPanel>
             </StackPanel>
-            <Button Style="{StaticResource DarkBtn}"
+            <Button Style="{DynamicResource DarkBtn}"
                     FontFamily="/Resources/Fonts/#Montserrat"
                     Content="Add New"
                     Width="100"
