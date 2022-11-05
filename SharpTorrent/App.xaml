@@ -31,6 +31,15 @@
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:TorrentViewModel}">
+                <view:TorrentView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:TorrentsMenuViewModel}">
+                <view:TorrentsMenuView/>
+            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

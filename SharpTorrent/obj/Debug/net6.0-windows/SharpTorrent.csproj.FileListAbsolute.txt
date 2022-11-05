@@ -99,3 +99,5 @@ C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\ref\Sh
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\View\AddNewTorrentView.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\View\AddNewTorrentView.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\View\Themes\DarkUI\DarkButton.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\View\TorrentsMenuView.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\View\TorrentsMenuView.baml

@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SharpTorrent.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для AddNewTorrentView.xaml
+    /// Логика взаимодействия для TorrentMenuView.xaml
     /// </summary>
-    public partial class AddNewTorrentView : Window
+    public partial class TorrentsMenuView : UserControl
     {
-        public AddNewTorrentView()
+        public TorrentsMenuView()
         {
             InitializeComponent();
         }
