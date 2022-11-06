@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\App.xaml
-14-1026625191
+12-1709095937
 
-16-707078668
+142141038895
 206-1834141499
-MVVM\View\AddNewTorrentView.xaml;MVVM\View\HomeView.xaml;MVVM\View\MainWindow.xaml;MVVM\View\Themes\DarkUI\DarkBg.xaml;MVVM\View\Themes\DarkUI\DarkBtn.xaml;MVVM\View\Themes\DarkUI\DarkButton.xaml;MVVM\View\Themes\DarkUI\DarkMenu.xaml;MVVM\View\Themes\DarkUI\DarkScrollBar.xaml;MVVM\View\Themes\DarkUI\DarkText.xaml;MVVM\View\Themes\DarkUI\DarkTitle.xaml;MVVM\View\Themes\DarkUI\DarkTorrentsList.xaml;MVVM\View\Themes\General\IconsTheme.xaml;MVVM\View\TorrentsMenuView.xaml;MVVM\View\TorrentView.xaml;
+MVVM\View\HomeView.xaml;MVVM\View\MainWindow.xaml;MVVM\View\Themes\DarkUI\DarkBg.xaml;MVVM\View\Themes\DarkUI\DarkBtn.xaml;MVVM\View\Themes\DarkUI\DarkMenu.xaml;MVVM\View\Themes\DarkUI\DarkScrollBar.xaml;MVVM\View\Themes\DarkUI\DarkText.xaml;MVVM\View\Themes\DarkUI\DarkTitle.xaml;MVVM\View\Themes\DarkUI\DarkTorrentsList.xaml;MVVM\View\Themes\General\IconsTheme.xaml;MVVM\View\TorrentsMenuView.xaml;MVVM\View\TorrentView.xaml;
 
 False
 

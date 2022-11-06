@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using MonoTorrent;
 using MonoTorrent.Client;
 using System;
 using System.Collections.Generic;
@@ -17,21 +18,6 @@ namespace SharpTorrent.MVVM.ViewModel
     {
         public Base.Command AddNewCommand { get; set; }
 
-
-        private string active = "No Active torrents yet";
-        public string Active
-        {
-            get => active;
-            set => Set(ref active, value);
-        }
-
-        private string stoped = "No Stoped torrents yet";
-        public string Stoped
-        {
-            get => stoped;
-            set => Set(ref stoped, value);
-        }
-
         private ObservableCollection<ListBoxItem> activeTorrents = new();
         public ObservableCollection<ListBoxItem> ActiveTorrents
         {
@@ -39,26 +25,23 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref activeTorrents, value);
         }
 
-
-        private ObservableCollection<ListBoxItem> stopedTorrents = new();
-        public ObservableCollection<ListBoxItem> StopedTorrents
+        private ListBoxItem selectedItem;
+        public ListBoxItem SelectedItem
         {
-            get => stopedTorrents;
-            set => Set(ref stopedTorrents, value);
+            get => selectedItem;
+            set
+            {
+                Set(ref selectedItem, value);
+                foreach(TorrentViewModel vm in TorrentVMs)
+                    if (selectedItem.DataContext == vm)
+                        MainViewModel.currentView = vm;
+            }
+            
         }
 
         List<TorrentViewModel> TorrentVMs = new();
 
-        private ListBoxItem selectedItem;
-
-        public ListBoxItem SelectedItem
-        {
-            get => selectedItem;
-            set => Set(ref selectedItem, value);
-        }
-
-
-        public void AddNewActiveTorrent(TorrentManager manager)
+        public void ShowTorrent(TorrentManager manager)
         {
             TorrentVMs.Add(new TorrentViewModel
             {
@@ -72,15 +55,62 @@ namespace SharpTorrent.MVVM.ViewModel
             {
                 DataContext = TorrentVMs[^1],
             });
-
         }
+
         public TorrentsMenuViewModel()
         {
+
+            #region Test area
+            for (int i = 0; i < 10; i++)
+            {
+                TorrentVMs.Add(new TorrentViewModel
+                {
+                    IsActive = true,
+                    ProgressBarValue = Convert.ToInt32($"{i}0"),
+                    TorrentName = $"torrent number {i}"
+                });
+
+                #region ListBoxItem content init
+                var converter = new BrushConverter();
+                var content = new StackPanel().Children;
+
+                content.Add(new TextBlock
+                {
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    FontSize = 12.0,
+                    Height = 47,
+                    Foreground = Brushes.White,
+                    //Text = "{Binding TorrentName}"\
+                    Text = $"torrent number {i}",
+                });
+
+                content.Add(new ProgressBar
+                {
+                    Minimum = 0,
+                    Maximum = 100,
+                    //Value = "{Binding ProgressBarValue}"
+                    Value = Convert.ToInt32($"{i}0"),
+                    Foreground = /*(Brush)new BrushConverter().ConvertFrom("#00ff00")*/
+                    Brushes.Green,
+                    Height = 1,
+                    Background = /*(Brush)converter.ConvertFrom("#453838")*/
+                    Brushes.DarkGray,
+                    BorderThickness = new Thickness(0)
+                });
+                #endregion
+
+                ActiveTorrents.Add(new ListBoxItem
+                {
+                    DataContext = TorrentVMs[i],
+                    Content = content
+                });
+
+            }
+            #endregion
+
+
             AddNewCommand = new Base.Command(o =>
             {
-                //AddNewActiveTorrent();
-                //AddNewTorrentView view = new();
-                //view.Show();
                 OpenFileDialog ofd = new()
                 {
                     Filter = "Torrent Files(*.torrent)|*.torrent"
@@ -88,24 +118,16 @@ namespace SharpTorrent.MVVM.ViewModel
 
                 if (ofd.ShowDialog() == true)
                 {
-                    // need to create the folder with name of name opened file
+                    string DownloadFile = ofd.FileName;
 
-                    var DownloadFile = ofd.FileName;        // return full path to the File
+                    string dirName = GetFileName(DownloadFile);
+                    string dirPath = Path.GetDirectoryName(ofd.FileName) ?? "";
 
-                    string dirName = DownloadFile
-                                    .Split('\\').Last() // return the file name with extension
-                                    .Split('.').First();// return file name without extension
+                    string SaveDirectory = CreateDorectoryByName(dirName, dirPath);
 
+                    if (!Directory.Exists(SaveDirectory))
+                        Directory.CreateDirectory(SaveDirectory);
 
-                    string directoryPath = Path.Combine(
-                                           Path.GetDirectoryName(ofd.FileName) + // return the path of parrent directory
-                                           "\\" +
-                                           dirName);
-
-                    Directory.CreateDirectory(directoryPath);
-
-                    var SaveDirectory = directoryPath; // the end
-                    //Task<TorrentManager> task;
                     try
                     {
                         //var task = MainModel.DownloadAsync(DownloadFile, SaveDirectory);
@@ -114,9 +136,13 @@ namespace SharpTorrent.MVVM.ViewModel
                     }
                     catch (Exception) { }
                 }
-
             });
-
         }
+
+        private string GetFileName(string path) =>
+            path.Split('\\').Last().Split('.').First();
+
+        private string CreateDorectoryByName(string name, string path) =>
+            Path.Combine(path + "\\" + name);
     }
 }

@@ -31,24 +31,11 @@
         </ControlTemplate>
     </UserControl.Resources>
     <StackPanel>
+        
         <ScrollViewer Height="400">
-            <StackPanel>
-                <StackPanel Margin="0,20">
-                    <TextBlock Text="{Binding Active}"
-                                   Style="{DynamicResource DarkText}"
-                                   Margin="10,0,0,0"/>
-                    <ListBox Style="{DynamicResource DarkListbox}"
-                                     ItemsSource="{Binding ActiveTorrents}"
-                                     SelectedValue="{Binding SelectedItem}"/>
-                </StackPanel>
-                <StackPanel Margin="0,20">
-                    <TextBlock Text="{Binding Stoped}"
-                                   Style="{DynamicResource DarkText}"
-                                   Margin="10,0,0,0"/>
-                    <ListBox Style="{DynamicResource DarkListbox}"
-                                 ItemsSource="{Binding StopedTorrents}"/>
-                </StackPanel>
-            </StackPanel>
+            <ListBox Style="{DynamicResource DarkListbox}"
+                     ItemsSource="{Binding ActiveTorrents}"
+                     SelectedValue="{Binding SelectedItem}"/>
         </ScrollViewer>
         <Button Style="{DynamicResource DarkBtn}"
                     FontFamily="/Resources/Fonts/#Montserrat"

@@ -13,6 +13,8 @@
         <viewmodel:HomeViewModel/>
     </UserControl.DataContext>
     <Grid>
-        
+        <TextBlock Text="HomeVM" HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="72" Foreground="White"/>
     </Grid>
 </UserControl>

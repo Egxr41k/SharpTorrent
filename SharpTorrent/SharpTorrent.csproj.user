@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="MVVM\View\AddNewTorrentView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="MVVM\View\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,9 +18,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MVVM\View\AddNewTorrentView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="MVVM\View\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -34,9 +28,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\Themes\DarkUI\DarkBtn.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MVVM\View\Themes\DarkUI\DarkButton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\Themes\DarkUI\DarkMenu.xaml">

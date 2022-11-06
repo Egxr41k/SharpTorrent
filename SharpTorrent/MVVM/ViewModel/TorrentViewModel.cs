@@ -18,7 +18,12 @@ namespace SharpTorrent.MVVM.ViewModel
 
         public bool IsActive { get; set; }
 
-        public string? TorrentName { get; set; }
+        public string TorrentName
+        {
+            get => torrentName;
+            set => Set(ref torrentName, value);
+        }
+        private string torrentName = "untilted";
         public string? TorrentPath { get; set; }
 
         public int ProgressBarValue

@@ -11,6 +11,19 @@
         <viewmodel:TorrentViewModel/>
     </UserControl.DataContext>
     <StackPanel Margin="10">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="20, 0, 0, 15"
+                   Foreground="#fff"
+                   FontSize="12"
+                   Text="output:"
+                   Height="15"/>
+            <TextBlock Margin="20, 0, 0, 15"
+                   Foreground="#fff"
+                   FontSize="12"
+                   Text="{Binding TorrentName}"
+                   Height="15"/>
+        </StackPanel>
+        
         <TextBlock Margin="20, 0, 0, 15"
                    Foreground="#fff"
                    FontSize="12"

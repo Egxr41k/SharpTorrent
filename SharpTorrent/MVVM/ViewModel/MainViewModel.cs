@@ -43,12 +43,24 @@ namespace SharpTorrent.MVVM.ViewModel
         {
             get => Application.Current.MainWindow;
         }
-        private object currentView;
+        public static object currentView;
         public object CurrentView
         {
             get => currentView;
             set => Set(ref currentView, value);
         }
+        //public static Base.ViewModel tempView
+        //{
+        //    set
+        //    {
+        //        CurrentView = value;
+        //    }
+        //}
+        //public void SetView()
+        //{
+        //    CurrentView = tempView;
+        //}
+
         public object MenuControl
         {
             get => menuControl;
@@ -87,8 +99,11 @@ namespace SharpTorrent.MVVM.ViewModel
             TorrentsMenuVM = new();
             MenuControl = TorrentsMenuVM;
 
+            //CurrentView = tempView;
+
             HomeVM = new();
             currentView = HomeVM;
+
 
             IconsInit();
             AppCommandsInit();
