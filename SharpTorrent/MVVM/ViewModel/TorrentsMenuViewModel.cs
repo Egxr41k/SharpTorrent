@@ -26,15 +26,15 @@ namespace SharpTorrent.MVVM.ViewModel
         }
 
         private ListBoxItem selectedItem;
+
+        private MainViewModel MainVM = (MainViewModel)Application.Current.MainWindow.DataContext;
         public ListBoxItem SelectedItem
         {
             get => selectedItem;
             set
             {
                 Set(ref selectedItem, value);
-                foreach(TorrentViewModel vm in TorrentVMs)
-                    if (selectedItem.DataContext == vm)
-                        MainViewModel.currentView = vm;
+                MainVM.CurrentView = selectedItem.DataContext;
             }
             
         }
