@@ -11,31 +11,34 @@
         <vm:TorrentsMenuViewModel/>
     </UserControl.DataContext>
     <UserControl.Resources>
-        <ControlTemplate x:Key="TorrentListItem" TargetType="ListBoxItem">
-            <StackPanel Height="48" Width="194">
-                <StackPanel.DataContext>
-                    <vm:TorrentViewModel/>
-                </StackPanel.DataContext>
-                <TextBlock HorizontalAlignment="Left"
-                           FontSize="12"
-                           Height="47"
-                           Text="{Binding TorrentName}"/>
-                <ProgressBar Minimum="0"
-                             Maximum="100"
-                             Value="{Binding ProgressBarValue}"
-                             Foreground="#00ff00"
-                             Height="1"
-                             Background="#453838"
-                             BorderThickness="0"/>
-            </StackPanel>
-        </ControlTemplate>
+        
     </UserControl.Resources>
     <StackPanel>
         
         <ScrollViewer Height="400">
             <ListBox Style="{DynamicResource DarkListbox}"
                      ItemsSource="{Binding ActiveTorrents}"
-                     SelectedValue="{Binding SelectedItem}"/>
+                     SelectedValue="{Binding SelectedItem}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Height="48" Width="194">
+                            <TextBlock HorizontalAlignment="Left"
+                                        FontSize="12"
+                                        Height="47"
+                                        Text="{Binding TorrentName}"/>
+                            <ProgressBar Minimum="0"
+                                        Maximum="100"
+                                        Value="{Binding ProgressBarValue}"
+                                        Foreground="#00ff00"
+                                        Height="1"
+                                        Background="#453838"
+                                        BorderThickness="0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                    
+                </ListBox.ItemTemplate>
+
+            </ListBox>
         </ScrollViewer>
         <Button Style="{DynamicResource DarkBtn}"
                     FontFamily="/Resources/Fonts/#Montserrat"

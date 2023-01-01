@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:SharpTorrent.MVVM.View"
              xmlns:viewmodel="clr-namespace:SharpTorrent.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="760">
+             d:DesignHeight="450" d:DesignWidth="700">
     <UserControl.DataContext>
         <viewmodel:TorrentViewModel/>
     </UserControl.DataContext>
@@ -23,13 +23,7 @@
                    Text="{Binding TorrentName}"
                    Height="15"/>
         </StackPanel>
-        
-        <TextBlock Margin="20, 0, 0, 15"
-                   Foreground="#fff"
-                   FontSize="12"
-                   Text="output:"
-                   Height="15"/>
-        <RichTextBox Width="740"
+        <RichTextBox
                      Height="400"
                      Background="#0A0A0A"
                      BorderBrush="#484848"

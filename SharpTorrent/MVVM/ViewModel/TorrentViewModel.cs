@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpTorrent.MVVM.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +24,8 @@ namespace SharpTorrent.MVVM.ViewModel
             get => torrentName;
             set => Set(ref torrentName, value);
         }
-        private string torrentName = "untilted";
-        public string? TorrentPath { get; set; }
+        private string torrentName = "1";
+        public string TorrentPath { get; set; }
 
         public int ProgressBarValue
         {
@@ -32,6 +33,13 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref progrssBarValue, value);
         }
         private int progrssBarValue;
+
+        public TorrentViewModel()
+        {
+            var manager = MainModel.Manager;
+            //TorrentName = MainModel.Manager.Name;
+            //ProgrssBarValue = MainModel.Manager.BitField.PercentComplete;
+        }
 
     }
 }

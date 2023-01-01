@@ -1,12 +1,13 @@
 ﻿using Microsoft.Win32;
-using MonoTorrent;
 using MonoTorrent.Client;
+using SharpTorrent.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Reflection.Metadata;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,42 +26,43 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref activeTorrents, value);
         }
 
-        private ListBoxItem selectedItem;
+        private MainViewModel MainVM
+        {
+            get => (MainViewModel)MainViewModel.MainWindow.DataContext;
+        }
 
-        private MainViewModel MainVM = (MainViewModel)Application.Current.MainWindow.DataContext;
+        private ListBoxItem selectedItem;
         public ListBoxItem SelectedItem
         {
             get => selectedItem;
             set
             {
                 Set(ref selectedItem, value);
-                MainVM.CurrentView = selectedItem.DataContext;
+                MainVM.CurrentView = value.DataContext;
             }
-            
         }
 
         List<TorrentViewModel> TorrentVMs = new();
 
-        public void ShowTorrent(TorrentManager manager)
+        private void AddNewActiveTorrent(TorrentManager manager)
         {
-            TorrentVMs.Add(new TorrentViewModel
-            {
-                IsActive = true,
-                TorrentName = manager.Name,
-                TorrentPath = manager.SavePath,
-                ProgressBarValue = (int)manager.Progress
-            });
+            TorrentVMs.Add(new TorrentViewModel());
 
             ActiveTorrents.Add(new ListBoxItem
             {
-                DataContext = TorrentVMs[^1],
+                DataContext = TorrentVMs.Last(),
             });
         }
 
-        public TorrentsMenuViewModel()
+        private void TestMenuInit()
         {
+            // пока остановимся здесь.
+            // оснваная задача на ближайшие пару дней -
+            // детальная прорабока визуальной части, 
+            // а миенно наполнение елементов списка меню
+            // повезет, если удастаться это сделать до конца недели,
+            // это будет означать то что я движусь чуть быстрее чем я расчитовал.
 
-            #region Test area
             for (int i = 0; i < 10; i++)
             {
                 TorrentVMs.Add(new TorrentViewModel
@@ -70,47 +72,43 @@ namespace SharpTorrent.MVVM.ViewModel
                     TorrentName = $"torrent number {i}"
                 });
 
-                #region ListBoxItem content init
-                var converter = new BrushConverter();
-                var content = new StackPanel().Children;
-
-                content.Add(new TextBlock
-                {
-                    HorizontalAlignment = HorizontalAlignment.Left,
-                    FontSize = 12.0,
-                    Height = 47,
-                    Foreground = Brushes.White,
-                    //Text = "{Binding TorrentName}"\
-                    Text = $"torrent number {i}",
-                });
-
-                content.Add(new ProgressBar
-                {
-                    Minimum = 0,
-                    Maximum = 100,
-                    //Value = "{Binding ProgressBarValue}"
-                    Value = Convert.ToInt32($"{i}0"),
-                    Foreground = /*(Brush)new BrushConverter().ConvertFrom("#00ff00")*/
-                    Brushes.Green,
-                    Height = 1,
-                    Background = /*(Brush)converter.ConvertFrom("#453838")*/
-                    Brushes.DarkGray,
-                    BorderThickness = new Thickness(0)
-                });
-                #endregion
-
                 ActiveTorrents.Add(new ListBoxItem
                 {
-                    DataContext = TorrentVMs[i],
-                    Content = content
+                    DataContext = TorrentVMs.Last(),
                 });
 
-            }
+            #region ListBoxItem content init
+            //var converter = new BrushConverter();
+            //var content = new TextBlock
+            //{
+            //    HorizontalAlignment = HorizontalAlignment.Left,
+            //    FontSize = 12.0,
+            //    Height = 47,
+            //    Foreground = Brushes.White,
+            //    //Text = "{Binding TorrentName}"\
+            //    Text = $"torrent number {i}",
+            //};
             #endregion
+            }            
+        }
 
+
+        public TorrentsMenuViewModel()
+        {
+            TestMenuInit();
+            
+            //if (MainVM != null)
+            //{
+            //    var TorrentVm = new TorrentViewModel();
+            //    TorrentVm.IsActive = true;
+            //    TorrentVm.ProgressBarValue = Convert.ToInt32($"{50}");
+            //    TorrentVm.TorrentName = $"sucсsess";
+            //    MainVM.CurrentView = TorrentVm;
+            //}
 
             AddNewCommand = new Base.Command(o =>
             {
+
                 OpenFileDialog ofd = new()
                 {
                     Filter = "Torrent Files(*.torrent)|*.torrent"
@@ -121,28 +119,40 @@ namespace SharpTorrent.MVVM.ViewModel
                     string DownloadFile = ofd.FileName;
 
                     string dirName = GetFileName(DownloadFile);
-                    string dirPath = Path.GetDirectoryName(ofd.FileName) ?? "";
+                    string dirPath = Path.GetDirectoryName(ofd.FileName) ??
+                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-                    string SaveDirectory = CreateDorectoryByName(dirName, dirPath);
+                    string SaveDirectory = Path.Combine(dirPath + "\\" + dirName);
 
                     if (!Directory.Exists(SaveDirectory))
                         Directory.CreateDirectory(SaveDirectory);
 
                     try
                     {
-                        //var task = MainModel.DownloadAsync(DownloadFile, SaveDirectory);
-                        //Thread.Sleep(1000);
-                        //AddNewActiveTorrent(task.Result);
+                        StartDownload(DownloadFile, SaveDirectory);
                     }
                     catch (Exception) { }
                 }
+
+
             });
         }
 
-        private string GetFileName(string path) =>
+        private void StartDownload(string file, string directory)
+        {
+            //это юудет следущим этапом, пока поработает над визуалом,
+            //благо теперь вся логика приложения храниться раздельно в еще одном файле
+            Task task1 = new Task(() =>
+            {
+                var task = MainModel.DownloadAsync(file, directory);
+            });
+            task1.Wait();
+
+            AddNewActiveTorrent(MainModel.Manager);
+            MainModel.Manager.StartAsync();
+        }
+        private static string GetFileName(string path) =>
             path.Split('\\').Last().Split('.').First();
 
-        private string CreateDorectoryByName(string name, string path) =>
-            Path.Combine(path + "\\" + name);
     }
 }

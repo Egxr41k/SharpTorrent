@@ -39,11 +39,13 @@ namespace SharpTorrent.MVVM.ViewModel
         private BitmapImage closeIcon;
 
         #endregion
-        private static Window MainWindow
+
+        public static Window MainWindow
         {
             get => Application.Current.MainWindow;
+            set => Application.Current.MainWindow = value;
         }
-        public static object currentView;
+        private object currentView;
         public object CurrentView
         {
             get => currentView;
@@ -88,7 +90,7 @@ namespace SharpTorrent.MVVM.ViewModel
         {
             string IconsDirectory = MainModel.RESOURCEPATH + "\\Icons";
             string[] IconsFiles = Directory.GetFiles(IconsDirectory);
-
+            
             closeIcon    = new BitmapImage(new Uri(IconsFiles[0]));
             maximizeIcon = new BitmapImage(new Uri(IconsFiles[1]));
             minimizeIcon = new BitmapImage(new Uri(IconsFiles[2]));
@@ -96,14 +98,8 @@ namespace SharpTorrent.MVVM.ViewModel
 
         public MainViewModel()
         {
-            TorrentsMenuVM = new();
-            MenuControl = TorrentsMenuVM;
-
-            //CurrentView = tempView;
-
-            HomeVM = new();
-            currentView = HomeVM;
-
+            MenuControl = new TorrentsMenuViewModel();
+            CurrentView = new HomeViewModel();
 
             IconsInit();
             AppCommandsInit();
