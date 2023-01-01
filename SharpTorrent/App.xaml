@@ -36,6 +36,10 @@
                 <view:TorrentView/>
             </DataTemplate>
             
+            <!--<DataTemplate DataType="{x:Type viewModel:TorrentViewModel}">
+                <view:TorrentListBoxItem/>
+            </DataTemplate>-->
+            
             <DataTemplate DataType="{x:Type viewModel:TorrentsMenuViewModel}">
                 <view:TorrentsMenuView/>
             </DataTemplate>

@@ -23,6 +23,7 @@ namespace SharpTorrent.MVVM.View
         public TorrentView()
         {
             InitializeComponent();
+            var dc = DataContext;
         }
     }
 }

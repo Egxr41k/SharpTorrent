@@ -15,30 +15,56 @@ using System.Windows.Media;
 
 namespace SharpTorrent.MVVM.ViewModel
 {
+    internal class TorrentModel
+    {
+        public TorrentModel(string name, int precentComplete, bool isActive)
+        {
+            IsActive = isActive;
+            TorrentName = name;
+            ProgressBarValue = precentComplete;
+        }
+
+        public bool IsActive { get; private set; }
+        public string TorrentName { get; private set; }
+        public int ProgressBarValue { get; private set; }
+    }
+
     internal class TorrentsMenuViewModel : Base.ViewModel
     {
         public Base.Command AddNewCommand { get; set; }
 
-        private ObservableCollection<ListBoxItem> activeTorrents = new();
-        public ObservableCollection<ListBoxItem> ActiveTorrents
+        private ObservableCollection<TorrentViewModel> activeTorrents = new();
+        public ObservableCollection<TorrentViewModel> ActiveTorrents
         {
             get => activeTorrents;
             set => Set(ref activeTorrents, value);
         }
 
-        private MainViewModel MainVM
-        {
-            get => (MainViewModel)MainViewModel.MainWindow.DataContext;
-        }
+        private MainViewModel MainVM = (MainViewModel)MainViewModel.MainWindow.DataContext;
+        
 
-        private ListBoxItem selectedItem;
-        public ListBoxItem SelectedItem
+        private TorrentViewModel selectedItem;
+        TorrentViewModel torrentVM = new();
+        public TorrentViewModel SelectedItem
         {
             get => selectedItem;
             set
             {
+
                 Set(ref selectedItem, value);
-                MainVM.CurrentView = value.DataContext;
+                if (MainVM.CurrentView is HomeViewModel)
+                {
+                    torrentVM = new();
+                    MainVM.CurrentView = torrentVM;
+                }
+                else 
+                {
+                    torrentVM.TorrentName = value.TorrentName;
+                    torrentVM.ProgressBarValue = value.ProgressBarValue;
+                    torrentVM.IsActive = true;
+                };
+                MainVM.CurrentView = torrentVM;
+                
             }
         }
 
@@ -46,56 +72,33 @@ namespace SharpTorrent.MVVM.ViewModel
 
         private void AddNewActiveTorrent(TorrentManager manager)
         {
-            TorrentVMs.Add(new TorrentViewModel());
-
-            ActiveTorrents.Add(new ListBoxItem
-            {
-                DataContext = TorrentVMs.Last(),
-            });
+            //TorrentVMs.Add(new TorrentViewModel());
         }
 
-        private void TestMenuInit()
+        public static List<TorrentModel> torrentModels = new();
+        private void TestMenuInit(int itemsCount)
         {
-            // пока остановимся здесь.
-            // оснваная задача на ближайшие пару дней -
-            // детальная прорабока визуальной части, 
-            // а миенно наполнение елементов списка меню
-            // повезет, если удастаться это сделать до конца недели,
-            // это будет означать то что я движусь чуть быстрее чем я расчитовал.
-
-            for (int i = 0; i < 10; i++)
+            //torrentModels = new TorrentModel[itemsCount];
+            for (int i = 0; i < itemsCount; i++)
             {
-                TorrentVMs.Add(new TorrentViewModel
+                //torrentModels.Add(new($"torrent number {i}", Convert.ToInt32($"{i}0"), true));
+                
+                //TorrentVMs.Add(new TorrentViewModel());
+
+                ActiveTorrents.Add(new TorrentViewModel()
                 {
-                    IsActive = true,
+                    TorrentName = $"torrent number {i}",
                     ProgressBarValue = Convert.ToInt32($"{i}0"),
-                    TorrentName = $"torrent number {i}"
+                    IsActive = true,
                 });
 
-                ActiveTorrents.Add(new ListBoxItem
-                {
-                    DataContext = TorrentVMs.Last(),
-                });
-
-            #region ListBoxItem content init
-            //var converter = new BrushConverter();
-            //var content = new TextBlock
-            //{
-            //    HorizontalAlignment = HorizontalAlignment.Left,
-            //    FontSize = 12.0,
-            //    Height = 47,
-            //    Foreground = Brushes.White,
-            //    //Text = "{Binding TorrentName}"\
-            //    Text = $"torrent number {i}",
-            //};
-            #endregion
             }            
         }
 
 
         public TorrentsMenuViewModel()
         {
-            TestMenuInit();
+            TestMenuInit(10);
             
             //if (MainVM != null)
             //{

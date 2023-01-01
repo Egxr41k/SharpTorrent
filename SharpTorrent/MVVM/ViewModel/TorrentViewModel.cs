@@ -34,9 +34,18 @@ namespace SharpTorrent.MVVM.ViewModel
         }
         private int progrssBarValue;
 
+        public void SetData()
+        {
+
+        }
+
         public TorrentViewModel()
         {
-            var manager = MainModel.Manager;
+            //var torrent = TorrentsMenuViewModel.torrentModels.Last();
+            //IsActive = torrent.IsActive;
+            //TorrentName = torrent.TorrentName;
+            //ProgressBarValue = torrent.ProgressBarValue;
+            //var manager = MainModel.Manager;
             //TorrentName = MainModel.Manager.Name;
             //ProgrssBarValue = MainModel.Manager.BitField.PercentComplete;
         }

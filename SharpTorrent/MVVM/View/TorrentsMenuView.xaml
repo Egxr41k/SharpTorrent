@@ -25,6 +25,7 @@
                             <TextBlock HorizontalAlignment="Left"
                                         FontSize="12"
                                         Height="47"
+                                        Foreground="#fff"
                                         Text="{Binding TorrentName}"/>
                             <ProgressBar Minimum="0"
                                         Maximum="100"
