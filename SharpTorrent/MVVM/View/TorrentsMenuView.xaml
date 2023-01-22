@@ -18,7 +18,8 @@
         <ScrollViewer Height="400">
             <ListBox Style="{DynamicResource DarkListbox}"
                      ItemsSource="{Binding ActiveTorrents}"
-                     SelectedValue="{Binding SelectedItem}">
+                     SelectedValue="{Binding SelectedItem}"
+                     SelectedIndex="{Binding SelectedIndex}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Height="48" Width="194">

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Win32;
+using MonoTorrent;
 using MonoTorrent.Client;
 using SharpTorrent.MVVM.Model;
+using SharpTorrent.MVVM.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,19 +17,13 @@ using System.Windows.Media;
 
 namespace SharpTorrent.MVVM.ViewModel
 {
-    internal class TorrentModel
-    {
-        public TorrentModel(string name, int precentComplete, bool isActive)
-        {
-            IsActive = isActive;
-            TorrentName = name;
-            ProgressBarValue = precentComplete;
-        }
-
-        public bool IsActive { get; private set; }
-        public string TorrentName { get; private set; }
-        public int ProgressBarValue { get; private set; }
-    }
+    //internal static class TorrentModel
+    //{
+        
+    //    public static bool IsActive { get; set; }
+    //    public static string TorrentName { get; set; }
+    //    public static int ProgressBarValue { get; set; }
+    //}
 
     internal class TorrentsMenuViewModel : Base.ViewModel
     {
@@ -40,49 +36,60 @@ namespace SharpTorrent.MVVM.ViewModel
             set => Set(ref activeTorrents, value);
         }
 
+        private int selectedIndex;
+
+        public int SelectedIndex
+        {
+            get => selectedIndex; 
+            set => Set(ref selectedIndex, value);
+        }
+
         private MainViewModel MainVM = (MainViewModel)MainViewModel.MainWindow.DataContext;
-        
+
 
         private TorrentViewModel selectedItem;
-        TorrentViewModel torrentVM = new();
+        public static TorrentModel CurrentModel;
         public TorrentViewModel SelectedItem
         {
+            //get => (TorrentViewModel)MainVM.CurrentView;
+            //set => MainVM.CurrentView = value;
             get => selectedItem;
             set
             {
-
                 Set(ref selectedItem, value);
-                if (MainVM.CurrentView is HomeViewModel)
-                {
-                    torrentVM = new();
-                    MainVM.CurrentView = torrentVM;
-                }
-                else 
-                {
-                    torrentVM.TorrentName = value.TorrentName;
-                    torrentVM.ProgressBarValue = value.ProgressBarValue;
-                    torrentVM.IsActive = true;
-                };
-                MainVM.CurrentView = torrentVM;
-                
+                CurrentModel = torrentModels[SelectedIndex];
+                MainVM.CurrentView = ActiveTorrents[SelectedIndex];
             }
         }
 
         List<TorrentViewModel> TorrentVMs = new();
 
-        private void AddNewActiveTorrent(TorrentManager manager)
+        private void AddNewActiveTorrent(/*TorrentManager manager*/)
         {
+            //ActiveTorrents.Add(new TorrentViewModel()
+            //{
+            //    TorrentName = $"torrent number 999",
+            //    ProgressBarValue = Convert.ToInt32($"0"),
+            //    IsActive = true,
+            //});
             //TorrentVMs.Add(new TorrentViewModel());
         }
 
         public static List<TorrentModel> torrentModels = new();
         private void TestMenuInit(int itemsCount)
         {
+
             //torrentModels = new TorrentModel[itemsCount];
             for (int i = 0; i < itemsCount; i++)
             {
-                //torrentModels.Add(new($"torrent number {i}", Convert.ToInt32($"{i}0"), true));
+                torrentModels.Add(new()
+                {
+                    TorrentName = $"torrent number {i}",
+                    ProgressBarValue = Convert.ToInt32($"{i}0"),
+                    IsActive = true,
+                });
                 
+                CurrentModel = torrentModels[i];
                 //TorrentVMs.Add(new TorrentViewModel());
 
                 ActiveTorrents.Add(new TorrentViewModel()
@@ -111,31 +118,31 @@ namespace SharpTorrent.MVVM.ViewModel
 
             AddNewCommand = new Base.Command(o =>
             {
+                AddNewActiveTorrent();
+                //OpenFileDialog ofd = new()
+                //{
+                //    Filter = "Torrent Files(*.torrent)|*.torrent"
+                //};
 
-                OpenFileDialog ofd = new()
-                {
-                    Filter = "Torrent Files(*.torrent)|*.torrent"
-                };
+                //if (ofd.ShowDialog() == true)
+                //{
+                //    string DownloadFile = ofd.FileName;
 
-                if (ofd.ShowDialog() == true)
-                {
-                    string DownloadFile = ofd.FileName;
+                //    string dirName = GetFileName(DownloadFile);
+                //    string dirPath = Path.GetDirectoryName(ofd.FileName) ??
+                //    Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-                    string dirName = GetFileName(DownloadFile);
-                    string dirPath = Path.GetDirectoryName(ofd.FileName) ??
-                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                //    string SaveDirectory = Path.Combine(dirPath + "\\" + dirName);
 
-                    string SaveDirectory = Path.Combine(dirPath + "\\" + dirName);
+                //    if (!Directory.Exists(SaveDirectory))
+                //        Directory.CreateDirectory(SaveDirectory);
 
-                    if (!Directory.Exists(SaveDirectory))
-                        Directory.CreateDirectory(SaveDirectory);
-
-                    try
-                    {
-                        StartDownload(DownloadFile, SaveDirectory);
-                    }
-                    catch (Exception) { }
-                }
+                //    try
+                //    {
+                //        StartDownload(DownloadFile, SaveDirectory);
+                //    }
+                //    catch (Exception) { }
+                //}
 
 
             });
@@ -151,7 +158,7 @@ namespace SharpTorrent.MVVM.ViewModel
             });
             task1.Wait();
 
-            AddNewActiveTorrent(MainModel.Manager);
+            //AddNewActiveTorrent(MainModel.Manager);
             MainModel.Manager.StartAsync();
         }
         private static string GetFileName(string path) =>

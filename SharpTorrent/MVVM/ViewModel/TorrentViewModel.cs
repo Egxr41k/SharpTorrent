@@ -8,8 +8,16 @@ using System.Windows.Documents;
 
 namespace SharpTorrent.MVVM.ViewModel
 {
+    internal class TorrentModel
+    {
+        public bool IsActive { get; set; }
+        public string TorrentName { get; set; }
+        public int ProgressBarValue { get; set; }
+    }
+
     internal class TorrentViewModel : Base.ViewModel
     {
+        TorrentModel model;
         public TextRange Text
         {
             get => text;
@@ -34,20 +42,21 @@ namespace SharpTorrent.MVVM.ViewModel
         }
         private int progrssBarValue;
 
-        public void SetData()
+        public void SetData(string name, int precentComplete, bool isActive)
         {
-
+            IsActive = isActive;
+            TorrentName = name;
+            ProgressBarValue = precentComplete;
         }
 
         public TorrentViewModel()
         {
-            //var torrent = TorrentsMenuViewModel.torrentModels.Last();
-            //IsActive = torrent.IsActive;
-            //TorrentName = torrent.TorrentName;
-            //ProgressBarValue = torrent.ProgressBarValue;
-            //var manager = MainModel.Manager;
-            //TorrentName = MainModel.Manager.Name;
-            //ProgrssBarValue = MainModel.Manager.BitField.PercentComplete;
+            model = TorrentsMenuViewModel.CurrentModel;
+
+            IsActive = model.IsActive;
+            TorrentName = model.TorrentName;
+            ProgressBarValue = model.ProgressBarValue;
+            
         }
 
     }
