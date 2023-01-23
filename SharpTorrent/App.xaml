@@ -3,30 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SharpTorrent"
              xmlns:viewModel="clr-namespace:SharpTorrent.MVVM.ViewModel"
-             xmlns:view="clr-namespace:SharpTorrent.MVVM.View"   
-             StartupUri="MVVM/View/MainWindow.xaml">
+             xmlns:view="clr-namespace:SharpTorrent.MVVM.View">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
 
 
-             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkBtn.xaml"/>
-             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkBg.xaml"/>
-             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkMenu.xaml"/>
-             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkScrollBar.xaml"/>
-             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkText.xaml"/>
-             <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkText.xaml"/>
+             <ResourceDictionary Source="MVVM/Views/Themes/DarkUI/DarkBtn.xaml"/>
+             <ResourceDictionary Source="MVVM/Views/Themes/DarkUI/DarkBg.xaml"/>
+             <ResourceDictionary Source="MVVM/Views/Themes/DarkUI/DarkMenu.xaml"/>
+             <ResourceDictionary Source="MVVM/Views/Themes/DarkUI/DarkScrollBar.xaml"/>
+             <ResourceDictionary Source="MVVM/Views/Themes/DarkUI/DarkText.xaml"/>
+             <ResourceDictionary Source="MVVM/Views/Themes/DarkUI/DarkText.xaml"/>
                 
 
-            <ResourceDictionary Source="MVVM/View/Themes/General/IconsTheme.xaml"/>
-            <ResourceDictionary Source="MVVM/View/Themes/DarkUI/DarkTorrentsList.xaml"/>
+            <ResourceDictionary Source="MVVM/Views/Themes/General/IconsTheme.xaml"/>
+            <ResourceDictionary Source="MVVM/Views/Themes/DarkUI/DarkTorrentsList.xaml"/>
 
 
             </ResourceDictionary.MergedDictionaries>
             
-            <DataTemplate DataType="{x:Type viewModel:MainViewModel}">
+            <!--<DataTemplate DataType="{x:Type viewModel:MainViewModel}">
                 <view:MainWindow/>
-            </DataTemplate>
+            </DataTemplate>-->
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>

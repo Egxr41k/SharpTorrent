@@ -7,48 +7,60 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="MVVM\View\HomeView.xaml.cs">
+    <Compile Update="MVVM\Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\TorrentsMenuView.xaml.cs">
+    <Compile Update="MVVM\Views\SharpTorrentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\TorrentView.xaml.cs">
+    <Compile Update="MVVM\Views\TorrentsMenuView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\TorrentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomTitleBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MVVM\View\HomeView.xaml">
+    <Page Update="MVVM\Views\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\MainWindow.xaml">
+    <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\Themes\DarkUI\DarkBg.xaml">
+    <Page Update="MVVM\Views\SharpTorrentView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\Themes\DarkUI\DarkBtn.xaml">
+    <Page Update="MVVM\Views\Themes\DarkUI\DarkBg.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\Themes\DarkUI\DarkMenu.xaml">
+    <Page Update="MVVM\Views\Themes\DarkUI\DarkBtn.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\Themes\DarkUI\DarkScrollBar.xaml">
+    <Page Update="MVVM\Views\Themes\DarkUI\DarkMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\Themes\DarkUI\DarkText.xaml">
+    <Page Update="MVVM\Views\Themes\DarkUI\DarkScrollBar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\Themes\DarkUI\DarkTitle.xaml">
+    <Page Update="MVVM\Views\Themes\DarkUI\DarkText.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\Themes\General\IconsTheme.xaml">
+    <Page Update="MVVM\Views\Themes\DarkUI\DarkTitle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\TorrentsMenuView.xaml">
+    <Page Update="MVVM\Views\Themes\General\IconsTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\TorrentView.xaml">
+    <Page Update="MVVM\Views\TorrentsMenuView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\TorrentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomTitleBar.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="SharpTorrent.CustomTitleBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SharpTorrent"
+             mc:Ignorable="d" 
+             MinHeight="30" MinWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Image}" x:Key="IconsTheme">
+            <Setter Property="Opacity" Value="0.6"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Margin" Value="2.5"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Grid.Column="1" Grid.Row="0" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="90"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="Transparent" Grid.Column="0" MouseDown="StackPanel_MouseDown"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <StackPanel Height="30" Width="30">
+                <Image Name="MinimizeIcon"
+                       Height="25" Width="25"
+                       Margin="2.5"
+                       Style="{DynamicResource IconsTheme}"
+                       MouseDown="MinimizeIcon_MouseDown"/>
+            </StackPanel>
+            <StackPanel Height="30" Width="30">
+                <Image Name="MaximizeIcon"
+                       Height="25" Width="25"
+                       Margin="2.5"
+                       Style="{DynamicResource IconsTheme}"
+                       MouseDown="MaximizeIcon_MouseDown"/>
+            </StackPanel>
+            <StackPanel Height="30" Width="30">
+                <Image Name="CloseIcon"
+                       Height="25" Width="25" Margin="2.5"
+                       Style="{DynamicResource IconsTheme}"
+                       MouseDown="CloseIcon_MouseDown"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

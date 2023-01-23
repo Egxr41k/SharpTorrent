@@ -6,7 +6,9 @@
              xmlns:vm="clr-namespace:SharpTorrent.MVVM.ViewModel"
              xmlns:local="clr-namespace:SharpTorrent.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="200">
+             d:DesignHeight="500"
+             d:DesignWidth="200"
+             Background="#101010">
     <UserControl.DataContext>
         <vm:TorrentsMenuViewModel/>
     </UserControl.DataContext>
