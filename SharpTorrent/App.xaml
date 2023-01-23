@@ -2,8 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SharpTorrent"
-             xmlns:viewModel="clr-namespace:SharpTorrent.MVVM.ViewModel"
-             xmlns:view="clr-namespace:SharpTorrent.MVVM.View">
+             xmlns:viewModel="clr-namespace:SharpTorrent.MVVM.ViewModels"
+             xmlns:view="clr-namespace:SharpTorrent.MVVM.Views">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -27,21 +27,21 @@
                 <view:MainWindow/>
             </DataTemplate>-->
 
-            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+            <!--<DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewModel:TorrentViewModel}">
                 <view:TorrentView/>
-            </DataTemplate>
+            </DataTemplate>-->
             
             <!--<DataTemplate DataType="{x:Type viewModel:TorrentViewModel}">
                 <view:TorrentListBoxItem/>
             </DataTemplate>-->
             
-            <DataTemplate DataType="{x:Type viewModel:TorrentsMenuViewModel}">
+            <!--<DataTemplate DataType="{x:Type viewModel:TorrentsMenuViewModel}">
                 <view:TorrentsMenuView/>
-            </DataTemplate>
+            </DataTemplate>-->
             
         </ResourceDictionary>
     </Application.Resources>

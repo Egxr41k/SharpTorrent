@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SharpTorrent.MVVM.ViewModel.Base
+namespace SharpTorrent.MVVM.ViewModels.Base
 {
     public abstract class ViewModel : INotifyPropertyChanged, IDisposable
     {

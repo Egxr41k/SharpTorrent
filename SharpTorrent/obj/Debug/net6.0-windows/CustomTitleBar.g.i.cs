@@ -77,7 +77,7 @@ namespace SharpTorrent {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SharpTorrent;V1.0.0.0;component/customtitlebar.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SharpTorrent;component/customtitlebar.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CustomTitleBar.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

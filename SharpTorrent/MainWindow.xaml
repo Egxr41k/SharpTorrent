@@ -1,11 +1,11 @@
-﻿<Window x:Class="SharpTorrent.MVVM.View.MainWindow"
+﻿<Window x:Class="SharpTorrent.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SharpTorrent"
-        xmlns:views="clr-namespace:SharpTorrent.MVVM.View"
-        xmlns:vm="clr-namespace:SharpTorrent.MVVM.ViewModel"
+        xmlns:views="clr-namespace:SharpTorrent.MVVM.Views"
+        xmlns:vm="clr-namespace:SharpTorrent.MVVM.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="540"
@@ -14,34 +14,6 @@
         WindowStyle="None"
         ResizeMode="NoResize">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Column="0" Grid.RowSpan="2" Background="#101010">
-            <TextBlock Text="SharpTorrent"
-                       Margin="5"
-                       FontSize="20"
-                       HorizontalAlignment="Center"
-                       Style="{DynamicResource DarkText}"/>
-            <TextBlock Text="Egxr41k software"
-                           FontSize="12" Opacity="0.6"
-                           HorizontalAlignment="Center"
-                           Style="{DynamicResource DarkText}"/>
-        </StackPanel>
-        
-        <ContentControl Content="{Binding MenuControl}" Grid.Row="2"/>
-        
-        <local:CustomTitleBar Grid.Row="0" Grid.Column="1"/>
-
-        <ContentControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="30"
-                        Content="{Binding CurrentView}"/>
+        <views:SharpTorrentView DataContext="{Binding SharpTorrentViewModel}"/>
     </Grid>
 </Window>

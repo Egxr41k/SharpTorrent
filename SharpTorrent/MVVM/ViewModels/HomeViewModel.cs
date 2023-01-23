@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SharpTorrent.MVVM.ViewModel
+namespace SharpTorrent.MVVM.ViewModels
 {
     internal class HomeViewModel : Base.ViewModel
     {

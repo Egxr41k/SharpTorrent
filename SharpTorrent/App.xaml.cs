@@ -1,5 +1,5 @@
-﻿using SharpTorrent.MVVM.View;
-using SharpTorrent.MVVM.ViewModel;
+﻿using SharpTorrent.MVVM.Views;
+using SharpTorrent.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -28,9 +28,11 @@ namespace SharpTorrent
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            var sharpTorrentViewModel = new SharpTorrentViewModel();
+
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(sharpTorrentViewModel)
             };
             MainWindow.Show();
 
