@@ -10,41 +10,29 @@ internal class AddTorrentCommand : Base.AsyncCommand
 {
     public override Task ExucuteTask(object parameter)
     {
-        OpenFileDialog ofd = new()
-        {
-            Filter = "Torrent Files(*.torrent)|*.torrent"
-        };
-
-        if (ofd.ShowDialog() == true)
-        {
-            string DownloadFile = ofd.FileName;
-
-            string dirName = DownloadFile.Split('\\').Last().Split('.').First();
-            string dirPath = Path.GetDirectoryName(ofd.FileName) ??
-            Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            string SaveDirectory = Path.Combine(dirPath + "\\" + dirName);
-
-            if (!Directory.Exists(SaveDirectory))
-                Directory.CreateDirectory(SaveDirectory);
-
-            try
-            {
-                StartDownload(DownloadFile, SaveDirectory);
-            }
-            catch (Exception) { }
-        }
         return Task.CompletedTask;
     }
 
-    private async void StartDownload(string file, string directory)
-    {
-        //______________________________
-        //
-        //MUST BE EDITING BEFORE TESTING
-        //______________________________
 
-        await MainModel.DownloadAsync(file, directory);
-        await MainModel.Manager.StartAsync();
-    }
+
+    //__________________________________________________________________
+    //
+    //Hello.
+    //Im am Egxr41k, Ukrainian teenager and .Net developer.
+    //
+    //Welcome to SharpTorrent - free and open source bit-torrent
+    //client based on MonoTorrent library by Alan MacGovern:
+    //https://github.com/alanmcgovern/monotorrent
+    //
+    //I hope that your user experiens of SharpTorrent usage won`t
+    //be so bad,but if application crashing, or not working correctly,
+    //please text me on telegram(username already has been written) or
+    //email: egor2005krava@gmail.com, and describe problew that you find.
+    //iam student so i havent many to paid QA engenier :) thanks.
+    //
+    //Cheak my another projects here:
+    //https://github.com/Egxr41k
+    //__________________________________________________________________
+
+
 }

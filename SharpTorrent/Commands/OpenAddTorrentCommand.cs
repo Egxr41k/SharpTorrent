@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SharpTorrent.Commands
+namespace SharpTorrent.Commands;
+
+internal class OpenAddTorrentCommand : Base.Command
 {
-    internal class OpenAddTorrentCommand : Base.Command
+    public override void Execute(object parameter)
     {
-        public override void Execute(object parameter)
-        {
-            throw new NotImplementedException();
-        }
+        //______________________________
+        //
+        //MUST BE EDITING BEFORE TESTING
+        //______________________________
     }
 }

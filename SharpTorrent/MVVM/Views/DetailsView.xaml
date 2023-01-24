@@ -22,12 +22,13 @@
                 Text="{Binding TorrentName}"
                 Height="15"/>
         </StackPanel>
-        <RichTextBox
+        <TextBox
             Height="400"
             Background="#0A0A0A"
             BorderBrush="#484848"
-            Foreground="White"
+            Foreground="Green"
             BorderThickness="1"
-            DataContext="{Binding Text}"/>
+            FontSize="16" 
+            Text="{Binding Text, Mode=OneWay}"/>
     </StackPanel>
 </UserControl>
