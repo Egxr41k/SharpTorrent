@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpTorrent.Stores;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,19 +9,26 @@ namespace SharpTorrent.MVVM.ViewModels
 {
     internal class SharpTorrentViewModel : Base.ViewModel
     {
-        public HomeViewModel HomeVM { get; set; }
-        public TorrentsMenuViewModel TorrentsMenuVM { get; set; }
+        //public HomeViewModel HomeVM { get; set; }
+        public ListingViewModel ListingViewModel { get; set; }
+        public DetailsViewModel DetailsViewModel { get; set; }
 
-        private object currentView;
-        public object CurrentView
+        //private object currentView;
+        //public object CurrentView
+        //{
+        //    get => currentView;
+        //    set => Set(ref currentView, value);
+        //}
+        public SharpTorrentViewModel(
+            SharpTorrentStore sharpTorrentStore,
+            SelectedModelStore selectedModelStore)
         {
-            get => currentView;
-            set => Set(ref currentView, value);
-        }
-        public SharpTorrentViewModel()
-        {
-            TorrentsMenuVM = new TorrentsMenuViewModel();
-            CurrentView = new HomeViewModel();
+            ListingViewModel = new ListingViewModel(sharpTorrentStore, selectedModelStore);
+            DetailsViewModel = new DetailsViewModel(selectedModelStore);
+            
+            
+            //HomeVM = new HomeViewModel();
+            //CurrentView = HomeVM;
         }
     }
 }

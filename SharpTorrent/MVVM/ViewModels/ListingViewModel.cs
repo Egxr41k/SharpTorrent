@@ -1,155 +1,68 @@
-﻿using SharpTorrent.MVVM.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace SharpTorrent.MVVM.ViewModels
+namespace SharpTorrent.MVVM.ViewModels;
+internal class ListingViewModel : Base.ViewModel
 {
-    //internal static class TorrentModel
-    //{
+    public Commands.Base.Command AddNewCommand { get; set; }
 
-    //    public static bool IsActive { get; set; }
-    //    public static string TorrentName { get; set; }
-    //    public static int ProgressBarValue { get; set; }
-    //}
 
-    internal class ListingViewModel : Base.ViewModel
+
+    private ObservableCollection<ListingItemViewModel> _activeTorrents;
+    public IEnumerable<ListingItemViewModel> ActiveTorrents => _activeTorrents;
+
+
+    public SelectedModelStore _selectedModelStore { get; }
+    private readonly SharpTorrentStore _sharpTorrentStore;
+
+    private ListingItemViewModel _selectedListingItemViewModel;
+    public ListingItemViewModel SelectedListingItemViewModel
     {
-        public Base.Command AddNewCommand { get; set; }
-
-        private ObservableCollection<DetailsViewModel> _activeTorrents = new();
-        public IEnumerable<DetailsViewModel> ActiveTorrents => _activeTorrents;
-
-
-
-        private int selectedIndex;
-        public int SelectedIndex
+        
+        get => _selectedListingItemViewModel;
+        set
         {
-            get => selectedIndex; 
-            set => Set(ref selectedIndex, value);
+            Set(ref _selectedListingItemViewModel, value);
+            _selectedModelStore.SelectedModel = _selectedListingItemViewModel?.SharpTorrentModel;
         }
+    }
 
-        //private MainViewModel MainVM = (MainViewModel)MainViewModel.MainWindow.DataContext;
-
-
-        private DetailsViewModel selectedItem;
-        public static TorrentModel CurrentModel;
-        public DetailsViewModel SelectedItem
-        {
-            //get => (TorrentViewModel)MainVM.CurrentView;
-            //set => MainVM.CurrentView = value;
-            get => selectedItem;
-            set
-            {
-                Set(ref selectedItem, value);
-                //CurrentModel = torrentModels[SelectedIndex];
-                //MainVM.CurrentView = ActiveTorrents[SelectedIndex];
-            }
-        }
-
-        List<DetailsViewModel> TorrentVMs = new();
-
-        private void AddNewActiveTorrent(/*TorrentManager manager*/)
-        {
-            //ActiveTorrents.Add(new TorrentViewModel()
-            //{
-            //    TorrentName = $"torrent number 999",
-            //    ProgressBarValue = Convert.ToInt32($"0"),
-            //    IsActive = true,
-            //});
-            //TorrentVMs.Add(new TorrentViewModel());
-        }
-
-        public static List<TorrentModel> torrentModels = new();
-        private void TestMenuInit(int itemsCount)
-        {
-
-            //torrentModels = new TorrentModel[itemsCount];
-            for (int i = 0; i < itemsCount; i++)
-            {
-                torrentModels.Add(new()
-                {
-                    TorrentName = $"torrent number {i}",
-                    ProgressBarValue = Convert.ToInt32($"{i}0"),
-                    IsActive = true,
-                });
-                
-                CurrentModel = torrentModels[i];
-                //TorrentVMs.Add(new TorrentViewModel());
-
-                ActiveTorrents.Add(new DetailsViewModel()
-                {
-                    TorrentName = $"torrent number {i}",
-                    ProgressBarValue = Convert.ToInt32($"{i}0"),
-                    IsActive = true,
-                });
-
-            }            
-        }
+    public ListingViewModel(SharpTorrentStore sharpTorrentStore, SelectedModelStore selectedModelStore )
+    {
+        _sharpTorrentStore = sharpTorrentStore;
+        _selectedModelStore = selectedModelStore;
+        _activeTorrents = new ObservableCollection<ListingItemViewModel>();
 
 
-        public ListingViewModel()
-        {
-            TestMenuInit(10);
-            
-            //if (MainVM != null)
-            //{
-            //    var TorrentVm = new TorrentViewModel();
-            //    TorrentVm.IsActive = true;
-            //    TorrentVm.ProgressBarValue = Convert.ToInt32($"{50}");
-            //    TorrentVm.TorrentName = $"sucсsess";
-            //    MainVM.CurrentView = TorrentVm;
-            //}
+        _sharpTorrentStore.TorrentAdded += _sharpTorrentStore_TorrentAdded;
+        _sharpTorrentStore.TorrentUpdated += _sharpTorrentStore_TorrentUpdated;
+        AddNewCommand = new AddTorrentCommand();
 
-            AddNewCommand = new Base.Command(o =>
-            {
-                AddNewActiveTorrent();
-                //OpenFileDialog ofd = new()
-                //{
-                //    Filter = "Torrent Files(*.torrent)|*.torrent"
-                //};
+        AddListItem(
+            new SharpTorrentModel(Guid.NewGuid(), "torrent1", true));
+        AddListItem(
+            new SharpTorrentModel(Guid.NewGuid(), "torrent2", true));
+        AddListItem(
+            new SharpTorrentModel(Guid.NewGuid(), "torrent3", true));
+    }
 
-                //if (ofd.ShowDialog() == true)
-                //{
-                //    string DownloadFile = ofd.FileName;
+    private void _sharpTorrentStore_TorrentUpdated(SharpTorrentModel model)
+    {
+        ListingItemViewModel listingItemViewModel =
+            _activeTorrents.FirstOrDefault(y => y.SharpTorrentModel.Id == model.Id);
+    }
 
-                //    string dirName = GetFileName(DownloadFile);
-                //    string dirPath = Path.GetDirectoryName(ofd.FileName) ??
-                //    Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+    private void _sharpTorrentStore_TorrentAdded(SharpTorrentModel model)
+    {
+        AddListItem(model);
+    }
 
-                //    string SaveDirectory = Path.Combine(dirPath + "\\" + dirName);
-
-                //    if (!Directory.Exists(SaveDirectory))
-                //        Directory.CreateDirectory(SaveDirectory);
-
-                //    try
-                //    {
-                //        StartDownload(DownloadFile, SaveDirectory);
-                //    }
-                //    catch (Exception) { }
-                //}
-
-
-            });
-        }
-
-        private void StartDownload(string file, string directory)
-        {
-            //это юудет следущим этапом, пока поработает над визуалом,
-            //благо теперь вся логика приложения храниться раздельно в еще одном файле
-            Task task1 = new Task(() =>
-            {
-                var task = MainModel.DownloadAsync(file, directory);
-            });
-            task1.Wait();
-
-            //AddNewActiveTorrent(MainModel.Manager);
-            MainModel.Manager.StartAsync();
-        }
-        private static string GetFileName(string path) =>
-            path.Split('\\').Last().Split('.').First();
-
+    private void AddListItem(SharpTorrentModel model)
+    {
+        //ICommand editCommand = new OpenEditListItemCommand(model, _modalNavigationStore);
+        _activeTorrents.Add(
+            new ListingItemViewModel(model, _sharpTorrentStore));
     }
 }

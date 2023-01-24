@@ -8,20 +8,11 @@ using System.Threading.Tasks;
 
 namespace SharpTorrent.MVVM.ViewModels.Base
 {
-    public abstract class ViewModel : INotifyPropertyChanged, IDisposable
+    public abstract class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void Dispose()
-        {
-            Dispose(true);
-        }
-        private bool _Disposed;
-        protected virtual void Dispose(bool Disposing)
-        {
-            if (!Disposing || _Disposed) return;
-            _Disposed = true;
-        }
+        protected virtual void Dispose() { }
 
         protected virtual void OnpropertyChanged([CallerMemberName] string name = null)
         {

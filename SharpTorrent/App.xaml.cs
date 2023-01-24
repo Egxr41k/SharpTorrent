@@ -1,11 +1,8 @@
-﻿using SharpTorrent.MVVM.Views;
-using SharpTorrent.MVVM.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿global using SharpTorrent.MVVM.ViewModels;
+global using SharpTorrent.Commands;
+global using SharpTorrent.MVVM.Models;
+global using SharpTorrent.Stores;
+
 using System.Windows;
 
 namespace SharpTorrent
@@ -15,20 +12,22 @@ namespace SharpTorrent
     /// </summary>
     public partial class App : Application
     {
-        //private readonly SelectedListAppModelStore _selectedListAppModelStore;
+        private readonly SelectedModelStore _selectedModelStore;
         //private readonly ModalNavigationStore _modalNavigationStore;
-        //private readonly ListAppStore _listAppStore;
+        private readonly SharpTorrentStore _sharpTorrentStore;
 
         public App()
         {
-            //_listAppStore = new ListAppStore();
+            _sharpTorrentStore = new SharpTorrentStore();
             //_modalNavigationStore = new ModalNavigationStore();
-            //_selectedListAppModelStore = new SelectedListAppModelStore(_listAppStore);
+            _selectedModelStore = new SelectedModelStore(_sharpTorrentStore);
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            var sharpTorrentViewModel = new SharpTorrentViewModel();
+            var sharpTorrentViewModel =
+                new SharpTorrentViewModel(_sharpTorrentStore,
+                _selectedModelStore);
 
             MainWindow = new MainWindow()
             {

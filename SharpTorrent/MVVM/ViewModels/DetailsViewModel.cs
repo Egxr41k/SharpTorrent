@@ -1,63 +1,56 @@
-﻿using SharpTorrent.MVVM.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-
-namespace SharpTorrent.MVVM.ViewModels
+﻿namespace SharpTorrent.MVVM.ViewModels
+internal class DetailsViewModel : Base.ViewModel
 {
-    internal class TorrentModel
+    //public TextRange Text
+    //{
+    //    get => text;
+    //    set => Set(ref text, value);
+    //}
+    //private TextRange text;
+
+    //public bool IsActive { get; set; }
+
+    //public string TorrentName
+    //{
+    //    get => torrentName;
+    //    set => Set(ref torrentName, value);
+    //}
+    //private string torrentName = "1";
+    //public string TorrentPath { get; set; }
+
+    //public int ProgressBarValue
+    //{
+    //    get => progrssBarValue;
+    //    set => Set(ref progrssBarValue, value);
+    //}
+    //private int progrssBarValue;
+
+    public string TorrentName => SelectedModel?.TorrentName ?? "Unknown";
+    public string Id => SelectedModel?.Id.ToString() ?? "Unknown";
+
+    public bool HasSelectedModel => SelectedModel != null;
+
+
+    private readonly SelectedModelStore _selectedModelStore;
+    private SharpTorrentModel SelectedModel => _selectedModelStore.SelectedModel;
+
+    public DetailsViewModel(SelectedModelStore selectedModelStore)
     {
-        public bool IsActive { get; set; }
-        public string TorrentName { get; set; }
-        public int ProgressBarValue { get; set; }
+        
+        _selectedModelStore = selectedModelStore;
+        _selectedModelStore.SelectedModelChanged += _selectedModelStore_SelectedModelChanged;
     }
 
-    internal class TorrentViewModel : Base.ViewModel
+    protected override void Dispose()
     {
-        TorrentModel model;
-        public TextRange Text
-        {
-            get => text;
-            set => Set(ref text, value);
-        }
-        private TextRange text;
-
-        public bool IsActive { get; set; }
-
-        public string TorrentName
-        {
-            get => torrentName;
-            set => Set(ref torrentName, value);
-        }
-        private string torrentName = "1";
-        public string TorrentPath { get; set; }
-
-        public int ProgressBarValue
-        {
-            get => progrssBarValue;
-            set => Set(ref progrssBarValue, value);
-        }
-        private int progrssBarValue;
-
-        public void SetData(string name, int precentComplete, bool isActive)
-        {
-            IsActive = isActive;
-            TorrentName = name;
-            ProgressBarValue = precentComplete;
-        }
-
-        public TorrentViewModel()
-        {
-            model = TorrentsMenuViewModel.CurrentModel;
-
-            IsActive = model.IsActive;
-            TorrentName = model.TorrentName;
-            ProgressBarValue = model.ProgressBarValue;
-            
-        }
-
+        _selectedModelStore.SelectedModelChanged -= _selectedModelStore_SelectedModelChanged;
+        base.Dispose();
+    }
+    private void _selectedModelStore_SelectedModelChanged()
+    {
+        OnpropertyChanged(nameof(HasSelectedModel));
+        OnpropertyChanged(nameof(TorrentName));
+        OnpropertyChanged(nameof(Id));
     }
 }
+

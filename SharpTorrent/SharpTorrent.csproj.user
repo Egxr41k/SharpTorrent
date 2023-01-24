@@ -10,13 +10,16 @@
     <Compile Update="MVVM\Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\Views\ListingItemView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\Views\SharpTorrentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\Views\TorrentsMenuView.xaml.cs">
+    <Compile Update="MVVM\Views\ListingView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\Views\TorrentView.xaml.cs">
+    <Compile Update="MVVM\Views\DetailsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="CustomTitleBar.xaml.cs">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\ListingItemView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\SharpTorrentView.xaml">
@@ -54,10 +60,10 @@
     <Page Update="MVVM\Views\Themes\General\IconsTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\Views\TorrentsMenuView.xaml">
+    <Page Update="MVVM\Views\ListingView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\Views\TorrentView.xaml">
+    <Page Update="MVVM\Views\DetailsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CustomTitleBar.xaml">

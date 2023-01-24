@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.IO;
 
 
-namespace SharpTorrent.MVVM.Model;
+namespace SharpTorrent.MVVM.Models;
 static class MainModel
 {
     public static string RESOURCEPATH =

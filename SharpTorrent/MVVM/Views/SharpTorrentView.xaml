@@ -19,23 +19,37 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.RowSpan="2" Background="#101010">
-            <TextBlock Text="SharpTorrent"
-                       Margin="5"
-                       FontSize="20"
-                       HorizontalAlignment="Center"
-                       Style="{DynamicResource DarkText}"/>
-            <TextBlock Text="Egxr41k software"
-                           FontSize="12" Opacity="0.6"
-                           HorizontalAlignment="Center"
-                           Style="{DynamicResource DarkText}"/>
+        <StackPanel
+            Grid.Column="0"
+            Grid.RowSpan="2"
+            Background="#101010">
+            <TextBlock
+                Text="SharpTorrent"
+                Margin="5"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                Style="{DynamicResource DarkText}"/>
+            <TextBlock
+                Text="Egxr41k software"
+                FontSize="12" Opacity="0.6"
+                HorizontalAlignment="Center"
+                Style="{DynamicResource DarkText}"/>
         </StackPanel>
 
-        <views:TorrentsMenuView DataContext="{Binding TorrentMenuVM}" Grid.Row="2"/>
+        <views:ListingView
+            DataContext="{Binding ListingViewModel}"
+            Grid.Row="2"/>
 
-        <local:CustomTitleBar Grid.Row="0" Grid.Column="1"/>
+        <local:CustomTitleBar
+            Grid.Row="0"
+            Grid.Column="1"/>
 
-        <ContentControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="30"
-                        Content="{Binding CurrentView}"/>
+        <!--<ContentControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="30"
+                        Content="{Binding CurrentView}"/>-->
+        <views:DetailsView
+            DataContext="{Binding DetailsViewModel}"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

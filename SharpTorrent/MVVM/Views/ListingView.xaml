@@ -14,8 +14,7 @@
         <ScrollViewer Height="400" HorizontalScrollBarVisibility="Hidden">
             <ListView Style="{DynamicResource DarkListbox}"
                      ItemsSource="{Binding ActiveTorrents}"
-                     SelectedItem="{Binding SelectedItem}"
-                     SelectedIndex="{Binding SelectedIndex}">
+                     SelectedItem="{Binding SelectedListingItemViewModel}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <views:ListingItemView/>
