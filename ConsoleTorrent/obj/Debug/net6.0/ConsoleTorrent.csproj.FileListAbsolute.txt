@@ -27,3 +27,32 @@ C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent
 C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.dll
 C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ReusableTasks.dll
 C:\code\.NET code\C#Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.csproj.CopyComplete
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.exe
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.deps.json
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.runtimeconfig.json
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ConsoleTorrent.pdb
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\Mono.Nat.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.BEncoding.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Client.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Connections.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Dht.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Factories.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Messages.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.PiecePicking.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.PieceWriter.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.PortForwarding.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.Trackers.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\MonoTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\bin\Debug\net6.0\ReusableTasks.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.csproj.AssemblyReference.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.AssemblyInfoInputs.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.AssemblyInfo.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.csproj.CoreCompileInputs.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.csproj.CopyComplete
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\refint\ConsoleTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.pdb
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ConsoleTorrent.genruntimeconfig.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\ConsoleTorrent\obj\Debug\net6.0\ref\ConsoleTorrent.dll

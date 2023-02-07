@@ -17,8 +17,35 @@
                      SelectedItem="{Binding SelectedListingItemViewModel}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <views:ListingItemView/>
+                        <StackPanel Height="48" Width="194">
+                            <TextBlock
+                            HorizontalAlignment="Left"
+                            FontSize="12"
+                            Height="47"
+                            Foreground="#fff"
+                            Text="{Binding TorrentName}"/>
+                            <ProgressBar
+                            Minimum="0"
+                            Maximum="100"
+                            Value="{Binding ProgressBarValue, Mode=OneWay}"
+                            Foreground="#00ff00"
+                            Height="1"
+                            Background="#453838"
+                            BorderThickness="0"/>
+                            
+                        </StackPanel>
+                        <DataTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelected" Value="False"/>
+                                    <!--<Condition Property="IsSelected" Value="True"/>-->
+                                    <!--<Condition Property="local:IsHighlightedHelper.IsHighlighted" Value="True"/>-->
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Grid.Background" Value="#ff00ff"/>
+                            </MultiTrigger>
+                        </DataTemplate.Triggers>
                     </DataTemplate>
+                    
                 </ListView.ItemTemplate>
 
             </ListView>

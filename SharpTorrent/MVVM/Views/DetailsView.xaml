@@ -19,7 +19,7 @@
                 Margin="20, 0, 0, 15"
                 Foreground="#fff"
                 FontSize="12"
-                Text="{Binding TorrentName}"
+                Text="{Binding ProgressBarValue}"
                 Height="15"/>
         </StackPanel>
         <TextBox
@@ -28,7 +28,7 @@
             BorderBrush="#484848"
             Foreground="Green"
             BorderThickness="1"
-            FontSize="16" 
+            FontSize="16" IsEnabled="False"
             Text="{Binding Text, Mode=OneWay}"/>
     </StackPanel>
 </UserControl>

@@ -38,19 +38,19 @@ internal class ListingViewModel : Base.ViewModel
 
         _sharpTorrentStore.TorrentAdded += _sharpTorrentStore_TorrentAdded;
         _sharpTorrentStore.TorrentUpdated += _sharpTorrentStore_TorrentUpdated;
-        AddNewCommand = new AddTorrentCommand();
+        AddNewCommand = new AddTorrentCommand(_sharpTorrentStore, this);
 
-        AddListItem(
-            new SharpTorrentModel(Guid.NewGuid(), "torrent1", true));
-        AddListItem(
-            new SharpTorrentModel(Guid.NewGuid(), "torrent2", true));
-        AddListItem(
-            new SharpTorrentModel(Guid.NewGuid(), "torrent3", true));
+        //AddListItem(
+        //    new SharpTorrentModel(Guid.NewGuid(), "torrent1"));
+        //AddListItem(
+        //    new SharpTorrentModel(Guid.NewGuid(), "torrent2"));
+        //AddListItem(
+        //    new SharpTorrentModel(Guid.NewGuid(), "torrent3"));
     }
 
     private void _sharpTorrentStore_TorrentUpdated(SharpTorrentModel model)
     {
-        ListingItemViewModel listingItemViewModel =
+        ListingItemViewModel? listingItemViewModel =
             _activeTorrents.FirstOrDefault(y => y.SharpTorrentModel.Id == model.Id);
     }
 

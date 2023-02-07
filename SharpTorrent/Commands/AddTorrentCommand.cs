@@ -6,33 +6,26 @@ using System.Threading.Tasks;
 
 namespace SharpTorrent.Commands;
 
-internal class AddTorrentCommand : Base.AsyncCommand
+internal class AddTorrentCommand : Base.Command
 {
-    public override Task ExucuteTask(object parameter)
+    private readonly SharpTorrentStore _sharpTorrentStore;
+    private readonly ListingViewModel _listingViewModel;
+
+    public AddTorrentCommand(SharpTorrentStore sharpTorrentStore, ListingViewModel listingViewModel)
     {
-        return Task.CompletedTask;
+        _sharpTorrentStore = sharpTorrentStore;
+        _listingViewModel = listingViewModel;
     }
 
+    public override void Execute(object? parameter)
+    {
+        SharpTorrentModel newtorrent = new();
+        //var manager = newtorrent.ManagerInit().Result;
 
+        try { _sharpTorrentStore.Add(newtorrent); }
+        catch (Exception) { }
 
-    //__________________________________________________________________
-    //
-    //Hello.
-    //Im am Egxr41k, Ukrainian teenager and .Net developer.
-    //
-    //Welcome to SharpTorrent - free and open source bit-torrent
-    //client based on MonoTorrent library by Alan MacGovern:
-    //https://github.com/alanmcgovern/monotorrent
-    //
-    //I hope that your user experiens of SharpTorrent usage won`t
-    //be so bad,but if application crashing, or not working correctly,
-    //please text me on telegram(username already has been written) or
-    //email: egor2005krava@gmail.com, and describe problew that you find.
-    //iam student so i havent many to paid QA engenier :) thanks.
-    //
-    //Cheak my another projects here:
-    //https://github.com/Egxr41k
-    //__________________________________________________________________
-
-
+        _listingViewModel.SelectedListingItemViewModel =
+            _listingViewModel.ActiveTorrents.Last();
+    }
 }

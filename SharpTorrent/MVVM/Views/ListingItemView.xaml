@@ -16,7 +16,7 @@
         <ProgressBar
             Minimum="0"
             Maximum="100"
-            Value="{Binding ProgressBarValue}"
+            Value="{Binding ProgressBarValue, Mode=OneWay}"
             Foreground="#00ff00"
             Height="1"
             Background="#453838"

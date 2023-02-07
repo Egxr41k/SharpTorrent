@@ -7,10 +7,13 @@ namespace ConsoleTorrent;
 
 class Program
 {
-    static void Main(string[] args)
+    static LinkedList<string> Last10Messages;
+    static async Task Main(string[] args)
     {
         var Listener = new Top10Listener(10);
         string? TorrentPath, DownloadPath;
+        //C:\Users\Egxr41k\Desktop\TorrentSamples\4471_rain_world.torrent
+        //C:\Users\Egxr41k\Desktop\TorrentSamples\4471_rain_world
         do
         {
             Console.Write("Enter the torrent file path: ");
@@ -21,63 +24,61 @@ class Program
         while (!File.Exists(TorrentPath) &&
             !Directory.Exists(DownloadPath));
 
+        TorrentManager torrent;
+
         Task.Run(async () =>
         {
+            ClientEngine Engine = new();
+            torrent = await Engine.AddAsync(
+            await Torrent.LoadAsync(
+                TorrentPath),
+            DownloadPath,
+            new TorrentSettingsBuilder()
+                .ToSettings());
 
-            var Engine = new ClientEngine(new EngineSettingsBuilder
+            //Manager = Engine.Torrents[0];
+
+            // эту штуку нужно выполнять только один раз для каждого менеджера
+            #region events
+
+            torrent.PeersFound += delegate (object? sender, PeersAddedEventArgs e)
             {
-                AllowPortForwarding = true,
-                AutoSaveLoadDhtCache = true,
-                AutoSaveLoadFastResume = true,
-                AutoSaveLoadMagnetLinkMetadata = true,
-                DhtEndPoint = new IPEndPoint(IPAddress.Any, 55123),
-                HttpStreamingPrefix = $"http://127.0.0.1:{55125}/"
-            }.ToSettings());
-
-            try
-            {
-                var settingsBuilder = new TorrentSettingsBuilder();
-                TorrentManager? manager = await Engine.AddAsync(
-                    await Torrent.LoadAsync(
-                        TorrentPath ?? "#"),
-                        DownloadPath ?? "#",
-                        settingsBuilder.ToSettings());
-
-                manager.PeersFound += delegate (object? sender, PeersAddedEventArgs e)
-                {
-                    lock (Listener)
-                        Listener.WriteLine($"Found {e.NewPeers} new peers and {e.ExistingPeers} existing peers");
-                };
-            }
-            catch (Exception e) { Console.WriteLine("Couldn't decode file. " + e.Message); }
-
-
-            var torrent = Engine.Torrents[0];
-
-
-            torrent.PeerConnected += (o, e) => {
-                lock (Listener)
-                    Listener.WriteLine($"Connection succeeded: {e.Peer.Uri}");
+                lock (Last10Messages)
+                    AddMessage($"Found {e.NewPeers} new peers and {e.ExistingPeers} existing peers");
             };
-            torrent.ConnectionAttemptFailed += (o, e) => {
-                lock (Listener)
-                    Listener.WriteLine(
+
+            torrent.PeerConnected += (o, e) =>
+            {
+                lock (Last10Messages)
+                    AddMessage($"Connection succeeded: {e.Peer.Uri}");
+            };
+
+            torrent.ConnectionAttemptFailed += (o, e) =>
+            {
+                lock (Last10Messages)
+                    AddMessage(
                         $"Connection failed: {e.Peer.ConnectionUri} - {e.Reason}");
             };
 
-            torrent.PieceHashed += delegate (object? o, PieceHashedEventArgs e) {
-                lock (Listener)
-                    Listener.WriteLine($"Piece Hashed: {e.PieceIndex} - {(e.HashPassed ? "Pass" : "Fail")}");
+            torrent.PieceHashed += delegate (object? o, PieceHashedEventArgs e)
+            {
+                lock (Last10Messages)
+                    AddMessage($"Piece Hashed: {e.PieceIndex} - {(e.HashPassed ? "Pass" : "Fail")}");
             };
 
-            torrent.TorrentStateChanged += delegate (object? o, TorrentStateChangedEventArgs e) {
-                lock (Listener)
-                    Listener.WriteLine($"OldState: {e.OldState} NewState: {e.NewState}");
+            torrent.TorrentStateChanged += delegate (object? o, TorrentStateChangedEventArgs e)
+            {
+                lock (Last10Messages)
+                    AddMessage($"OldState: {e.OldState} NewState: {e.NewState}");
             };
 
-            torrent.TrackerManager.AnnounceComplete += (sender, e) => {
-                Listener.WriteLine($"{e.Successful}: {e.Tracker}");
+            torrent.TrackerManager.AnnounceComplete += (sender, e) =>
+            {
+                AddMessage($"{e.Successful}: {e.Tracker}");
             };
+            #endregion
+
+            
 
             await torrent.StartAsync();
 
@@ -115,7 +116,7 @@ class Program
                     sb.AppendFormat("Current Requests:   {0}", await torrent.PieceManager.CurrentRequestCountAsync());
 
                 var peers = await torrent.GetPeersAsync();
-
+                sb.AppendLine();
                 sb.AppendLine("Outgoing:");
                 foreach (PeerId p in peers.Where(t => t.ConnectionDirection == Direction.Outgoing))
                 {
@@ -151,5 +152,15 @@ class Program
             while (torrent.Files[0].BitField.PercentComplete != 100.00);
 
         }).Wait();
+    }
+    public static void AddMessage(string message)
+    {
+        lock (Last10Messages)
+        {
+            if (Last10Messages.Count >= 10)
+                Last10Messages.RemoveFirst();
+
+            Last10Messages.AddLast(message);
+        }
     }
 }

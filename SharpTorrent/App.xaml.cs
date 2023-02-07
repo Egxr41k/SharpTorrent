@@ -4,6 +4,7 @@ global using SharpTorrent.MVVM.Models;
 global using SharpTorrent.Stores;
 
 using System.Windows;
+using System.Threading;
 
 namespace SharpTorrent
 {
@@ -15,27 +16,43 @@ namespace SharpTorrent
         private readonly SelectedModelStore _selectedModelStore;
         //private readonly ModalNavigationStore _modalNavigationStore;
         private readonly SharpTorrentStore _sharpTorrentStore;
+        private readonly SharpTorrentViewModel _sharpTorrentViewModel;
+        public static CancellationTokenSource cancellation;
 
         public App()
         {
+            cancellation = new CancellationTokenSource();
             _sharpTorrentStore = new SharpTorrentStore();
             //_modalNavigationStore = new ModalNavigationStore();
             _selectedModelStore = new SelectedModelStore(_sharpTorrentStore);
+
+            _sharpTorrentViewModel =
+                new SharpTorrentViewModel(_sharpTorrentStore,
+                _selectedModelStore);
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            var sharpTorrentViewModel =
-                new SharpTorrentViewModel(_sharpTorrentStore,
-                _selectedModelStore);
-
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel(sharpTorrentViewModel)
+                DataContext = new MainViewModel(_sharpTorrentViewModel)
             };
             MainWindow.Show();
 
             base.OnStartup(e);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            foreach(var torrent in
+                _sharpTorrentViewModel.ListingViewModel.ActiveTorrents)
+            {
+                torrent.SharpTorrentModel.Manager?.StopAsync();
+                cancellation.Cancel();
+            }
+            
+            base.OnExit(e);
+
         }
     }
 }
