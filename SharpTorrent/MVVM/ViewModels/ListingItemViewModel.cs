@@ -30,8 +30,7 @@ internal class ListingItemViewModel : Base.ViewModel
         {
             while (PercentComplete != 100.00)
                 ProgressBarValue = PercentComplete;
-        }, App.cancellation.Token)
-            .Start();
+        }, App.cancellation.Token).Start();
     }
     
 

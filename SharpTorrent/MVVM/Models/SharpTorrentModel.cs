@@ -21,7 +21,7 @@ internal class SharpTorrentModel
     public Guid Id { get; }
     public string TorrentName { get; private set; }
     //public Task? Task { get; set; }
-    public Thread? Thread { get; set; }
+    public Task? Task { get; set; }
     public LinkedList<string> Last10Messages { get; private set; }
 
     public TorrentManager? Manager { get; private set; }

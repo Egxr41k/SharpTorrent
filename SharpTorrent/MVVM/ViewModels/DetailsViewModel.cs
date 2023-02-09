@@ -11,7 +11,7 @@ namespace SharpTorrent.MVVM.ViewModels;
 internal class DetailsViewModel : Base.ViewModel
 {
     //public static Task? CurrentTask;
-    public static Thread? CurrentThread;
+    //public static Thread? CurrentThread;
 
     #region updatable property
     public string Text
@@ -86,7 +86,6 @@ internal class DetailsViewModel : Base.ViewModel
         base.Dispose();
     }
 
-    [System.Obsolete]
     private async void _selectedModelStore_SelectedModelChanged()
     {
         OnpropertyChanged(nameof(HasSelectedModel));
@@ -95,20 +94,17 @@ internal class DetailsViewModel : Base.ViewModel
         OnpropertyChanged(nameof(Manager));
 
 
-        //if (CurrentThread != null)
-        //{
-        //    //App.cancellation.Cancel();
-        //    CurrentThread;
-        //}
+        //if (CurrentTask != null) App.cancellation.Cancel();
         
+
         if (Manager != null)
         {
             if (Manager.State == TorrentState.Stopped)
                 await Manager.StartAsync();
 
-            if(SelectedModel.Thread == null)
+            if(SelectedModel.Task == null)
             {
-                SelectedModel.Thread = new Thread(() =>
+                SelectedModel.Task = new (() =>
                 {
                     StringBuilder output = new();
 
@@ -117,18 +113,10 @@ internal class DetailsViewModel : Base.ViewModel
                         Text = _selectedModelStore.
                             SelectedModel.GetCurrentInfo(output).Result;
                     }
-                }//, App.cancellation.Token
+                }, App.cancellation.Token
                 );
-                SelectedModel.Thread.Start();
+                SelectedModel.Task.Start();
             }
-            //if (SelectedModel.Thread.ThreadState == 
-            //    ThreadState.Unstarted)
-            //{
-            //    SelectedModel.Thread.Start();
-            //}
-            //else SelectedModel.Thread.Resume();
-
-            CurrentThread = SelectedModel.Thread;
         }
         else Text = "No active downloads here";
     }
