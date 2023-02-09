@@ -8,11 +8,8 @@ internal class ListingViewModel : Base.ViewModel
 {
     public Commands.Base.Command AddNewCommand { get; set; }
 
-
-
     private ObservableCollection<ListingItemViewModel> _activeTorrents;
     public IEnumerable<ListingItemViewModel> ActiveTorrents => _activeTorrents;
-
 
     public SelectedModelStore _selectedModelStore { get; }
     private readonly SharpTorrentStore _sharpTorrentStore;
@@ -20,7 +17,6 @@ internal class ListingViewModel : Base.ViewModel
     private ListingItemViewModel _selectedListingItemViewModel;
     public ListingItemViewModel SelectedListingItemViewModel
     {
-        
         get => _selectedListingItemViewModel;
         set
         {
@@ -40,10 +36,9 @@ internal class ListingViewModel : Base.ViewModel
         _sharpTorrentStore.TorrentUpdated += _sharpTorrentStore_TorrentUpdated;
         AddNewCommand = new AddTorrentCommand(_sharpTorrentStore, this);
 
-        //AddListItem(
-        //    new SharpTorrentModel(Guid.NewGuid(), "torrent1"));
-        //AddListItem(
-        //    new SharpTorrentModel(Guid.NewGuid(), "torrent2"));
+
+        AddListItem(
+            new SharpTorrentModel(Guid.NewGuid()));
         //AddListItem(
         //    new SharpTorrentModel(Guid.NewGuid(), "torrent3"));
     }

@@ -14,7 +14,6 @@ namespace SharpTorrent
     public partial class App : Application
     {
         private readonly SelectedModelStore _selectedModelStore;
-        //private readonly ModalNavigationStore _modalNavigationStore;
         private readonly SharpTorrentStore _sharpTorrentStore;
         private readonly SharpTorrentViewModel _sharpTorrentViewModel;
         public static CancellationTokenSource cancellation;
@@ -23,7 +22,6 @@ namespace SharpTorrent
         {
             cancellation = new CancellationTokenSource();
             _sharpTorrentStore = new SharpTorrentStore();
-            //_modalNavigationStore = new ModalNavigationStore();
             _selectedModelStore = new SelectedModelStore(_sharpTorrentStore);
 
             _sharpTorrentViewModel =

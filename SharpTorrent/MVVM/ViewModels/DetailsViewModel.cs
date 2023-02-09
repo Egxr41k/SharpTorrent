@@ -10,7 +10,8 @@ using System.Windows.Documents;
 namespace SharpTorrent.MVVM.ViewModels;
 internal class DetailsViewModel : Base.ViewModel
 {
-    public static Task? CurrentTask;
+    //public static Task? CurrentTask;
+    public static Thread? CurrentThread;
 
     #region updatable property
     public string Text
@@ -84,7 +85,8 @@ internal class DetailsViewModel : Base.ViewModel
             _selectedModelStore_SelectedModelChanged;
         base.Dispose();
     }
-    
+
+    [System.Obsolete]
     private async void _selectedModelStore_SelectedModelChanged()
     {
         OnpropertyChanged(nameof(HasSelectedModel));
@@ -93,26 +95,40 @@ internal class DetailsViewModel : Base.ViewModel
         OnpropertyChanged(nameof(Manager));
 
 
-        if (CurrentTask != null) App.cancellation.Cancel();
+        //if (CurrentThread != null)
+        //{
+        //    //App.cancellation.Cancel();
+        //    CurrentThread;
+        //}
         
         if (Manager != null)
         {
-            if (Manager.State == 0)
+            if (Manager.State == TorrentState.Stopped)
                 await Manager.StartAsync();
 
-            SelectedModel.Task = new Task(() =>
+            if(SelectedModel.Thread == null)
             {
-                StringBuilder output = new();
-
-                while (Manager?.Progress != 100.00 && Manager != null)
+                SelectedModel.Thread = new Thread(() =>
                 {
-                    Text = _selectedModelStore.
-                        SelectedModel.GetCurrentInfo(output).Result;
-                }
-            }, App.cancellation.Token);
+                    StringBuilder output = new();
 
-            SelectedModel.Task.Start();
-            CurrentTask = SelectedModel.Task;
+                    while (Manager?.Progress != 100.00 && Manager != null)
+                    {
+                        Text = _selectedModelStore.
+                            SelectedModel.GetCurrentInfo(output).Result;
+                    }
+                }//, App.cancellation.Token
+                );
+                SelectedModel.Thread.Start();
+            }
+            //if (SelectedModel.Thread.ThreadState == 
+            //    ThreadState.Unstarted)
+            //{
+            //    SelectedModel.Thread.Start();
+            //}
+            //else SelectedModel.Thread.Resume();
+
+            CurrentThread = SelectedModel.Thread;
         }
         else Text = "No active downloads here";
     }

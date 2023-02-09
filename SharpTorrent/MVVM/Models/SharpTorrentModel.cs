@@ -20,37 +20,87 @@ internal class SharpTorrentModel
 
     public Guid Id { get; }
     public string TorrentName { get; private set; }
-    public Task Task { get; set; }
+    //public Task? Task { get; set; }
+    public Thread? Thread { get; set; }
     public LinkedList<string> Last10Messages { get; private set; }
 
-    public TorrentManager Manager { get; private set; }
+    public TorrentManager? Manager { get; private set; }
 
     public string DownloadFile { get; private set; }
     public string SaveDirectory { get; private set; }
 
+    public SharpTorrentModel(Guid id)
+    {
+        Id = id;
 
+        Last10Messages = new();
+        DownloadFile = @"C:\Users\Egxr41k\Desktop\TorrentSamples\Anno-1404-RePack-ot-xatab (1).torrent";
+        SaveDirectory = @"C:\Users\Egxr41k\Desktop\TorrentSamples\Anno-1404-RePack-ot-xatab (1)";
+        TorrentName = "Anno 1404 Gold Edition by xatab";
+        var files = new DirectoryInfo(SaveDirectory + "\\" + TorrentName).GetFiles();
+
+        foreach (FileInfo file in files)
+        {
+            file.Delete();
+        }
+
+        //not final version of ManagerInitAsync
+        Task.Run(async () =>
+        {
+            Manager = await Engine.AddAsync(
+                await Torrent.LoadAsync(
+                    DownloadFile),
+                SaveDirectory,
+                new TorrentSettingsBuilder()
+                    .ToSettings());
+
+            #region events
+            Manager.PeersFound += delegate (object? sender, PeersAddedEventArgs e)
+            {
+                lock (Last10Messages)
+                    AddMessage($"Found {e.NewPeers} new peers and {e.ExistingPeers} existing peers");
+            };
+
+            Manager.PeerConnected += (o, e) =>
+            {
+                lock (Last10Messages)
+                    AddMessage($"Connection succeeded: {e.Peer.Uri}");
+            };
+
+            Manager.ConnectionAttemptFailed += (o, e) =>
+            {
+                lock (Last10Messages)
+                    AddMessage(
+                        $"Connection failed: {e.Peer.ConnectionUri} - {e.Reason}");
+            };
+
+            Manager.PieceHashed += delegate (object? o, PieceHashedEventArgs e)
+            {
+                lock (Last10Messages)
+                    AddMessage($"Piece Hashed: {e.PieceIndex} - {(e.HashPassed ? "Pass" : "Fail")}");
+            };
+
+            Manager.TorrentStateChanged += delegate (object? o, TorrentStateChangedEventArgs e)
+            {
+                lock (Last10Messages)
+                    AddMessage($"OldState: {e.OldState} NewState: {e.NewState}");
+            };
+
+            Manager.TrackerManager.AnnounceComplete += (sender, e) =>
+            {
+                AddMessage($"{e.Successful}: {e.Tracker}");
+            };
+            #endregion
+        }).Wait();
+
+    }
     public SharpTorrentModel()
     {
         Id = Guid.NewGuid();
         Last10Messages = new();
 
-
-
-#if DEBUG
-        
-        DownloadFile = @"C:\Users\Egxr41k\Desktop\TorrentSamples\Anno-1404-RePack-ot-xatab (1).torrent";
-        SaveDirectory = @"C:\Users\Egxr41k\Desktop\TorrentSamples\Anno-1404-RePack-ot-xatab (1)";
-        TorrentName = "Anno 1404 Gold Edition by xatab";
-        var files = new DirectoryInfo(SaveDirectory + "\\Anno 1404 Gold Edition by xatab").GetFiles();
-
-        
-        foreach (FileInfo file in files)
-        {
-            file.Delete();
-        }
-#else
         PathsInit();
-#endif
+
         //not final version of ManagerInitAsync
         Task.Run(async () =>
         {
@@ -114,15 +164,13 @@ internal class SharpTorrentModel
         {
             DownloadFile = ofd.FileName;
 
-            string dirName = DownloadFile.Split('\\').Last().Split('.').First();
-
-            TorrentName = dirName;
+            TorrentName = DownloadFile.Split('\\').Last().Split('.').First();
 
 
             string dirPath = Path.GetDirectoryName(ofd.FileName) ??
             Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            SaveDirectory = Path.Combine(dirPath + "\\" + dirName);
+            SaveDirectory = Path.Combine(dirPath + "\\" + TorrentName);
 
             if (!Directory.Exists(SaveDirectory))
                 Directory.CreateDirectory(SaveDirectory);
