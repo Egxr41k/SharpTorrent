@@ -28,7 +28,6 @@ C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\CustomTitleBar.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MainWindow.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\DetailsView.g.cs
-C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\HomeView.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\ListingItemView.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\ListingView.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\SharpTorrentView.g.cs
@@ -40,7 +39,6 @@ C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\App.
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\CustomTitleBar.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MainWindow.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\DetailsView.baml
-C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\HomeView.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\ListingItemView.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\ListingView.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows\MVVM\Views\SharpTorrentView.baml
