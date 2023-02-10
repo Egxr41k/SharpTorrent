@@ -7,7 +7,7 @@ internal class ListingItemViewModel : Base.ViewModel
 {
     public SharpTorrentModel SharpTorrentModel { get; private set; }
 
-    public string TorrentName => SharpTorrentModel.TorrentName;
+    public string TorrentName => SharpTorrentModel.Manager.Torrent.Name ?? "Unknown";
 
     public int ProgressBarValue
     {
@@ -17,11 +17,9 @@ internal class ListingItemViewModel : Base.ViewModel
     private int progrssBarValue;
 
     public int PercentComplete =>
-     (int)SharpTorrentModel.Manager?.Progress;
+     (int)SharpTorrentModel.Manager.Progress;
 
-
-    //public ICommand EditCommand { get; set; }
-    //public ICommand DeleteCommand { get; set; }
+    
 
     public ListingItemViewModel(SharpTorrentModel model, SharpTorrentStore sharpTorrentStore)
     {

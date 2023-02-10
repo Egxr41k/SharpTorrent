@@ -92,10 +92,8 @@ C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\V
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\Views\Themes\General\IconsTheme.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\CustomTitleBar.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\Views\HomeView.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\CustomTitleBar.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MainWindow.baml
-C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\Views\HomeView.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\Views\SharpTorrentView.g.cs
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\Views\SharpTorrentView.baml
 C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Debug\net6.0-windows\MVVM\Views\DetailsView.g.cs

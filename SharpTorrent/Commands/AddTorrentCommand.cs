@@ -25,7 +25,8 @@ internal class AddTorrentCommand : Base.Command
         try { _sharpTorrentStore.Add(newtorrent); }
         catch (Exception) { }
 
-        _listingViewModel.SelectedListingItemViewModel =
-            _listingViewModel.ActiveTorrents.Last();
+        _listingViewModel.
+            _selectedModelStore.
+                SelectedModel = newtorrent;
     }
 }

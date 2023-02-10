@@ -36,11 +36,6 @@ internal class ListingViewModel : Base.ViewModel
         _sharpTorrentStore.TorrentUpdated += _sharpTorrentStore_TorrentUpdated;
         AddNewCommand = new AddTorrentCommand(_sharpTorrentStore, this);
 
-
-        AddListItem(
-            new SharpTorrentModel(Guid.NewGuid()));
-        //AddListItem(
-        //    new SharpTorrentModel(Guid.NewGuid(), "torrent3"));
     }
 
     private void _sharpTorrentStore_TorrentUpdated(SharpTorrentModel model)

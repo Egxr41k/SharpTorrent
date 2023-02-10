@@ -13,20 +13,21 @@ namespace SharpTorrent
     /// </summary>
     public partial class App : Application
     {
+        public static CancellationTokenSource cancellation;
+
         private readonly SelectedModelStore _selectedModelStore;
         private readonly SharpTorrentStore _sharpTorrentStore;
         private readonly SharpTorrentViewModel _sharpTorrentViewModel;
-        public static CancellationTokenSource cancellation;
 
         public App()
         {
             cancellation = new CancellationTokenSource();
             _sharpTorrentStore = new SharpTorrentStore();
-            _selectedModelStore = new SelectedModelStore(_sharpTorrentStore);
+            _selectedModelStore = new SelectedModelStore
+                (_sharpTorrentStore);
 
-            _sharpTorrentViewModel =
-                new SharpTorrentViewModel(_sharpTorrentStore,
-                _selectedModelStore);
+            _sharpTorrentViewModel = new SharpTorrentViewModel
+                (_sharpTorrentStore, _selectedModelStore);
         }
 
         protected override void OnStartup(StartupEventArgs e)

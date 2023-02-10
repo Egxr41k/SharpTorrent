@@ -1,19 +1,9 @@
-﻿using MonoTorrent;
-using MonoTorrent.Client;
-using System.ComponentModel;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Documents;
+﻿using System.Text;
 
 
 namespace SharpTorrent.MVVM.ViewModels;
 internal class DetailsViewModel : Base.ViewModel
 {
-    //public static Task? CurrentTask;
-    //public static Thread? CurrentThread;
-
-    #region updatable property
     public string Text
     {
         get => text;
@@ -39,41 +29,13 @@ internal class DetailsViewModel : Base.ViewModel
             "\r\n" +
             "//////////////////////////////////////////////////////////////////";
 
-    public int ProgressBarValue
-    {
-        get => progrssBarValue;
-        set => Set(ref progrssBarValue, value);
-    }
-    private int progrssBarValue;
-
-    //make updatable property
-    public string EventListnerOutput
-    {
-        get
-        {
-            string output = "";
-            foreach (string str in SelectedModel.Last10Messages)
-            {
-                output += str + "\n";
-            }
-            return output;
-        }
-    }
-    #endregion
-
-    public string TorrentName => SelectedModel?.TorrentName ?? "Unknown";
-    public string Id => SelectedModel?.Id.ToString() ?? "Unknown";
-    public bool HasSelectedModel => SelectedModel != null;
-    public TorrentManager Manager => SelectedModel.Manager;
+    public MonoTorrent.Client.TorrentManager? Manager => SelectedModel.Manager;
 
     private readonly SelectedModelStore _selectedModelStore;
     private SharpTorrentModel SelectedModel => _selectedModelStore.SelectedModel;
-    
-    
 
     public DetailsViewModel(SelectedModelStore selectedModelStore)
     {
-        
         _selectedModelStore = selectedModelStore;
         _selectedModelStore.SelectedModelChanged += 
             _selectedModelStore_SelectedModelChanged;
@@ -87,19 +49,10 @@ internal class DetailsViewModel : Base.ViewModel
     }
 
     private async void _selectedModelStore_SelectedModelChanged()
-    {
-        OnpropertyChanged(nameof(HasSelectedModel));
-        OnpropertyChanged(nameof(TorrentName));
-        OnpropertyChanged(nameof(Id));
-        OnpropertyChanged(nameof(Manager));
-
-
-        //if (CurrentTask != null) App.cancellation.Cancel();
-        
-
+    {       
         if (Manager != null)
         {
-            if (Manager.State == TorrentState.Stopped)
+            if (Manager.State == MonoTorrent.Client.TorrentState.Stopped)
                 await Manager.StartAsync();
 
             if(SelectedModel.Task == null)
@@ -108,13 +61,14 @@ internal class DetailsViewModel : Base.ViewModel
                 {
                     StringBuilder output = new();
 
-                    while (Manager?.Progress != 100.00 && Manager != null)
+                    while (Manager.Progress != 100.00)
                     {
                         Text = _selectedModelStore.
                             SelectedModel.GetCurrentInfo(output).Result;
+                        if (Manager == null) break;
                     }
-                }, App.cancellation.Token
-                );
+                }, App.cancellation.Token);
+
                 SelectedModel.Task.Start();
             }
         }

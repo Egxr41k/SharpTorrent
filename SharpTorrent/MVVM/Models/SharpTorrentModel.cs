@@ -1,15 +1,12 @@
 ﻿using Microsoft.Win32;
 using MonoTorrent;
 using MonoTorrent.Client;
-using MonoTorrent.Connections;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 
 
 namespace SharpTorrent.MVVM.Models;
@@ -18,142 +15,14 @@ internal class SharpTorrentModel
 {
     public static ClientEngine Engine = new();
 
-    public Guid Id { get; }
-    public string TorrentName { get; private set; }
-    //public Task? Task { get; set; }
     public Task? Task { get; set; }
-    public LinkedList<string> Last10Messages { get; private set; }
-
     public TorrentManager? Manager { get; private set; }
+    public Guid Id { get; private set; }
 
-    public string DownloadFile { get; private set; }
-    public string SaveDirectory { get; private set; }
-
-    public SharpTorrentModel(Guid id)
-    {
-        Id = id;
-
-        Last10Messages = new();
-        DownloadFile = @"C:\Users\Egxr41k\Desktop\TorrentSamples\Anno-1404-RePack-ot-xatab (1).torrent";
-        SaveDirectory = @"C:\Users\Egxr41k\Desktop\TorrentSamples\Anno-1404-RePack-ot-xatab (1)";
-        TorrentName = "Anno 1404 Gold Edition by xatab";
-        var files = new DirectoryInfo(SaveDirectory + "\\" + TorrentName).GetFiles();
-
-        foreach (FileInfo file in files)
-        {
-            file.Delete();
-        }
-
-        //not final version of ManagerInitAsync
-        Task.Run(async () =>
-        {
-            Manager = await Engine.AddAsync(
-                await Torrent.LoadAsync(
-                    DownloadFile),
-                SaveDirectory,
-                new TorrentSettingsBuilder()
-                    .ToSettings());
-
-            #region events
-            Manager.PeersFound += delegate (object? sender, PeersAddedEventArgs e)
-            {
-                lock (Last10Messages)
-                    AddMessage($"Found {e.NewPeers} new peers and {e.ExistingPeers} existing peers");
-            };
-
-            Manager.PeerConnected += (o, e) =>
-            {
-                lock (Last10Messages)
-                    AddMessage($"Connection succeeded: {e.Peer.Uri}");
-            };
-
-            Manager.ConnectionAttemptFailed += (o, e) =>
-            {
-                lock (Last10Messages)
-                    AddMessage(
-                        $"Connection failed: {e.Peer.ConnectionUri} - {e.Reason}");
-            };
-
-            Manager.PieceHashed += delegate (object? o, PieceHashedEventArgs e)
-            {
-                lock (Last10Messages)
-                    AddMessage($"Piece Hashed: {e.PieceIndex} - {(e.HashPassed ? "Pass" : "Fail")}");
-            };
-
-            Manager.TorrentStateChanged += delegate (object? o, TorrentStateChangedEventArgs e)
-            {
-                lock (Last10Messages)
-                    AddMessage($"OldState: {e.OldState} NewState: {e.NewState}");
-            };
-
-            Manager.TrackerManager.AnnounceComplete += (sender, e) =>
-            {
-                AddMessage($"{e.Successful}: {e.Tracker}");
-            };
-            #endregion
-        }).Wait();
-
-    }
-    public SharpTorrentModel()
-    {
-        Id = Guid.NewGuid();
-        Last10Messages = new();
-
-        PathsInit();
-
-        //not final version of ManagerInitAsync
-        Task.Run(async () =>
-        {
-            Manager = await Engine.AddAsync(
-                await Torrent.LoadAsync(
-                    DownloadFile),
-                SaveDirectory,
-                new TorrentSettingsBuilder()
-                    .ToSettings());
-
-            #region events
-            Manager.PeersFound += delegate (object? sender, PeersAddedEventArgs e)
-            {
-                lock (Last10Messages)
-                    AddMessage($"Found {e.NewPeers} new peers and {e.ExistingPeers} existing peers");
-            };
-
-            Manager.PeerConnected += (o, e) =>
-            {
-                lock (Last10Messages)
-                    AddMessage($"Connection succeeded: {e.Peer.Uri}");
-            };
-
-            Manager.ConnectionAttemptFailed += (o, e) =>
-            {
-                lock (Last10Messages)
-                    AddMessage(
-                        $"Connection failed: {e.Peer.ConnectionUri} - {e.Reason}");
-            };
-
-            Manager.PieceHashed += delegate (object? o, PieceHashedEventArgs e)
-            {
-                lock (Last10Messages)
-                    AddMessage($"Piece Hashed: {e.PieceIndex} - {(e.HashPassed ? "Pass" : "Fail")}");
-            };
-
-            Manager.TorrentStateChanged += delegate (object? o, TorrentStateChangedEventArgs e)
-            {
-                lock (Last10Messages)
-                    AddMessage($"OldState: {e.OldState} NewState: {e.NewState}");
-            };
-
-            Manager.TrackerManager.AnnounceComplete += (sender, e) =>
-            {
-                AddMessage($"{e.Successful}: {e.Tracker}");
-            };
-            #endregion
-        }).Wait();
-        
-    }
+    public SharpTorrentModel() => ManagerInit();
 
     //ADD BUGS-PROTECTION
-    private void PathsInit() 
+    private void ManagerInit() 
     {
         OpenFileDialog ofd = new()
         {
@@ -162,85 +31,25 @@ internal class SharpTorrentModel
 
         if (ofd.ShowDialog() == true)
         {
-            DownloadFile = ofd.FileName;
+            string downloadFile = ofd.FileName;
 
-            TorrentName = DownloadFile.Split('\\').Last().Split('.').First();
+            string saveDirectory = Path.GetDirectoryName(ofd.FileName) ??
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-
-            string dirPath = Path.GetDirectoryName(ofd.FileName) ??
-            Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            SaveDirectory = Path.Combine(dirPath + "\\" + TorrentName);
-
-            if (!Directory.Exists(SaveDirectory))
-                Directory.CreateDirectory(SaveDirectory);
+            if (!Directory.Exists(saveDirectory))
+                Directory.CreateDirectory(saveDirectory);
+            
+            Task.Run(async () =>
+            {
+                Manager = await Engine.AddAsync(
+                    await Torrent.LoadAsync
+                        (downloadFile),
+                    saveDirectory,
+                    new TorrentSettingsBuilder()
+                        .ToSettings());
+            }).Wait();
         }
-        
-    }
 
-    // NEED FOR DEBUGING
-    public async Task<TorrentManager> ManagerInitAsync()
-    {
-        Manager = await Engine.AddAsync(
-            await Torrent.LoadAsync(
-                DownloadFile),
-            SaveDirectory,
-            new TorrentSettingsBuilder()
-                .ToSettings());
-
-
-        
-        #region events
-
-        Manager.PeersFound += delegate (object? sender, PeersAddedEventArgs e)
-        {
-            lock (Last10Messages)
-                AddMessage($"Found {e.NewPeers} new peers and {e.ExistingPeers} existing peers");
-        };
-
-        Manager.PeerConnected += (o, e) =>
-        {
-            lock (Last10Messages)
-                AddMessage($"Connection succeeded: {e.Peer.Uri}");
-        };
-
-        Manager.ConnectionAttemptFailed += (o, e) =>
-        {
-            lock (Last10Messages)
-                AddMessage(
-                    $"Connection failed: {e.Peer.ConnectionUri} - {e.Reason}");
-        };
-
-        Manager.PieceHashed += delegate (object? o, PieceHashedEventArgs e)
-        {
-            lock (Last10Messages)
-                AddMessage($"Piece Hashed: {e.PieceIndex} - {(e.HashPassed ? "Pass" : "Fail")}");
-        };
-
-        Manager.TorrentStateChanged += delegate (object? o, TorrentStateChangedEventArgs e)
-        {
-            lock (Last10Messages)
-                AddMessage($"OldState: {e.OldState} NewState: {e.NewState}");
-        };
-
-        Manager.TrackerManager.AnnounceComplete += (sender, e) =>
-        {
-            AddMessage($"{e.Successful}: {e.Tracker}");
-        };
-        #endregion
-
-        return Manager;
-    }
-
-    public void AddMessage(string message)
-    {
-        lock (Last10Messages)
-        {
-            if (Last10Messages.Count >= 10)
-                Last10Messages.RemoveFirst();
-
-            Last10Messages.AddLast(message);
-        }
     }
 
     public async Task<string> GetCurrentInfo(StringBuilder output)
@@ -302,7 +111,4 @@ internal class SharpTorrentModel
 
         return output.ToString();
     }
-
-
-
 }

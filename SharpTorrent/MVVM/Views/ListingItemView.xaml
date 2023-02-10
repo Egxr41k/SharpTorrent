@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:SharpTorrent.MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Height="48" Width="194">
+    <StackPanel Width="200">
         <TextBlock
             HorizontalAlignment="Left"
             FontSize="12"
