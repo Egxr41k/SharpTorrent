@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "tTeUuIffUeBnVKa0gmHbiApJa10s5cHN/wbBpqBYPkKXVuBVEwmtETL1sdlMjIYAYN1vmrTygGWJE6zLQrUtzA==",
+  "dgSpecHash": "HukTtVkdJB0+KvFqmXz2yFSKVo+VPsV1Kjy9nvb6HyUHx2TKPM7heMS9R/v3Q+Dh4IfwZyzxClxliwYvJX4wcA==",
   "success": true,
-  "projectFilePath": "C:\\code\\Egxr41k\\C#_Dev\\SharpTorrent\\SharpTorrent\\SharpTorrent.csproj",
+  "projectFilePath": "C:\\code\\Egxr41k\\C#_Dev\\desctop applications\\SharpTorrent\\SharpTorrent\\SharpTorrent.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Egxr41k\\.nuget\\packages\\mono.nat\\3.0.0\\mono.nat.3.0.0.nupkg.sha512",
     "C:\\Users\\Egxr41k\\.nuget\\packages\\monotorrent\\3.0.0-beta.rev0010\\monotorrent.3.0.0-beta.rev0010.nupkg.sha512",
-    "C:\\Users\\Egxr41k\\.nuget\\packages\\reusabletasks\\2.0.2\\reusabletasks.2.0.2.nupkg.sha512"
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\reusabletasks\\2.0.2\\reusabletasks.2.0.2.nupkg.sha512",
+    "C:\\Users\\Egxr41k\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.28\\microsoft.windows.sdk.net.ref.10.0.17763.28.nupkg.sha512"
   ],
   "logs": []
 }

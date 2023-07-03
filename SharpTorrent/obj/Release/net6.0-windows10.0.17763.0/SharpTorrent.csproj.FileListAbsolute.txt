@@ -1,0 +1,114 @@
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.exe
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.deps.json
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.runtimeconfig.json
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.pdb
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.csproj.AssemblyReference.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkBg.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkBtn.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkMenu.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkScrollBar.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkText.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkTitle.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkTorrentsList.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\General\IconsTheme.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\CustomTitleBar.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MainWindow.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\DetailsView.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\ListingItemView.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\ListingView.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\SharpTorrentView.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\App.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\GeneratedInternalTypeHelper.g.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent_MarkupCompile.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent_MarkupCompile.lref
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\App.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\CustomTitleBar.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MainWindow.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\DetailsView.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\ListingItemView.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\ListingView.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\SharpTorrentView.baml
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.g.resources
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.AssemblyInfoInputs.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.AssemblyInfo.cs
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.csproj.CoreCompileInputs.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\refint\SharpTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.pdb
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.genruntimeconfig.cache
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\ref\SharpTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\Mono.Nat.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.BEncoding.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Client.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Connections.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Dht.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Factories.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Messages.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.PiecePicking.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.PieceWriter.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.PortForwarding.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Trackers.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\ReusableTasks.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\Microsoft.Windows.SDK.NET.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\WinRT.Runtime.dll
+C:\code\Egxr41k\C#_Dev\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.csproj.CopyComplete
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.exe
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.deps.json
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.runtimeconfig.json
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\SharpTorrent.pdb
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\Mono.Nat.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.BEncoding.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Client.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Connections.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Dht.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Factories.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Messages.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.PiecePicking.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.PieceWriter.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.PortForwarding.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.Trackers.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\MonoTorrent.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\ReusableTasks.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\Microsoft.Windows.SDK.NET.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\bin\Release\net6.0-windows10.0.17763.0\WinRT.Runtime.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.csproj.AssemblyReference.cache
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkBg.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkBtn.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkMenu.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkScrollBar.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkText.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkTitle.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\DarkUI\DarkTorrentsList.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\Themes\General\IconsTheme.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\CustomTitleBar.g.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MainWindow.g.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\DetailsView.g.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\ListingItemView.g.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\ListingView.g.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\SharpTorrentView.g.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\App.g.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\GeneratedInternalTypeHelper.g.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent_MarkupCompile.cache
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent_MarkupCompile.lref
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\App.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\CustomTitleBar.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MainWindow.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\DetailsView.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\ListingItemView.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\ListingView.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\MVVM\Views\SharpTorrentView.baml
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.g.resources
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.AssemblyInfoInputs.cache
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.AssemblyInfo.cs
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.csproj.CoreCompileInputs.cache
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.csproj.CopyComplete
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\refint\SharpTorrent.dll
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.pdb
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\SharpTorrent.genruntimeconfig.cache
+C:\code\Egxr41k\C#_Dev\desctop applications\SharpTorrent\SharpTorrent\obj\Release\net6.0-windows10.0.17763.0\ref\SharpTorrent.dll
