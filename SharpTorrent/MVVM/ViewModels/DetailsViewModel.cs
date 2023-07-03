@@ -13,21 +13,21 @@ internal class DetailsViewModel : Base.ViewModel
             "//////////////////////////////////////////////////////////////////\r\n" +
             "\r\n" +
             "Hello.\r\n" +
-            "Im am Egxr41k, Ukrainian teenager and .Net developer.\r\n" +
+            "I am Egxr41k, a Ukrainian teenager and .Net developer.\r\n" +
             "\r\n" +
             "Welcome to SharpTorrent - free and open source bit-torrent\r\n" +
             "client, based on MonoTorrent - library by Alan MacGovern:\r\n" +
             "https://github.com/alanmcgovern/monotorrent\r\n" +
             "\r\n" +
-            "I hope that your user experiens of SharpTorrent usage won`t\r\n" +
-            "be so bad, but if application crashing, or not working correctly,\r\n" +
-            "please, text me on telegram(username already has been written) or\r\n" +
-            "email: egor2005krava@gmail.com, and describe problew that you find.\r\n" +
-            "I`m student so i havent many to paid QA engenier :) thanks.\r\n" +
-            "\r\nCheak my another projects here:\r\n" +
+            "I hope that your user experience of SharpTorrent usage won`t\r\n" +
+            "be as bad, but if the application crashes or doesn't work correctly,\r\n" +
+            "Please, contact me on telegram(@Egxr41k) or via\r\n" +
+            "email: egor2005krava@gmail.com, and report any problem you stumble upon.\r\n" +
+            "I`m a student so I don't have enough to pay the QA engineer :) thanks.\r\n" +
+            "\r\nCheck my other projects here:\r\n" +
             "https://github.com/Egxr41k\r\n" +
             "\r\n" +
-            "//////////////////////////////////////////////////////////////////";
+            "//////////////////////////////////////////////////////////////////"
 
     public MonoTorrent.Client.TorrentManager? Manager => SelectedModel.Manager;
 
