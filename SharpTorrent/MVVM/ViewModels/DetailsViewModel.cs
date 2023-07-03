@@ -27,7 +27,7 @@ internal class DetailsViewModel : Base.ViewModel
             "\r\nCheck my other projects here:\r\n" +
             "https://github.com/Egxr41k\r\n" +
             "\r\n" +
-            "//////////////////////////////////////////////////////////////////";
+            "//////////////////////////////////////////////////////////////////"
 
     public MonoTorrent.Client.TorrentManager? Manager => SelectedModel.Manager;
 
