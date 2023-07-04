@@ -1,5 +1,5 @@
 # SharpTorrent
-A simple Torrent Client for wpf .net 6, powered By [MonoTorrent] (https://github.com/alanmcgovern/monotorrent)
+A simple Torrent Client for wpf .net 6, powered By [MonoTorrent](https://github.com/alanmcgovern/monotorrent/)
 
 ![Download Screen](https://raw.githubusercontent.com/Egxr41k/SharpTorrent/master/SharpTorrent/Assets/DownloadScreen.png)
 
